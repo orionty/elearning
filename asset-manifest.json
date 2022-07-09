@@ -1,7 +1,7 @@
 {
   "main.css": "/elearning/static/css/main.235f47b3.chunk.css",
-  "main.js": "/elearning/static/js/main.ba1cd16a.chunk.js",
-  "main.js.map": "/elearning/static/js/main.ba1cd16a.chunk.js.map",
+  "main.js": "/elearning/static/js/main.16e186e9.chunk.js",
+  "main.js.map": "/elearning/static/js/main.16e186e9.chunk.js.map",
   "runtime~main.js": "/elearning/static/js/runtime~main.25e043bf.js",
   "runtime~main.js.map": "/elearning/static/js/runtime~main.25e043bf.js.map",
   "static/js/2.087932c1.chunk.js": "/elearning/static/js/2.087932c1.chunk.js",
@@ -9,7 +9,7 @@
   "static/js/3.3a121829.chunk.js": "/elearning/static/js/3.3a121829.chunk.js",
   "static/js/3.3a121829.chunk.js.map": "/elearning/static/js/3.3a121829.chunk.js.map",
   "index.html": "/elearning/index.html",
-  "precache-manifest.1e3f48b8d52ddfe4189d8be4d494a4b4.js": "/elearning/precache-manifest.1e3f48b8d52ddfe4189d8be4d494a4b4.js",
+  "precache-manifest.22d7946e6593791b398e920692c65acf.js": "/elearning/precache-manifest.22d7946e6593791b398e920692c65acf.js",
   "service-worker.js": "/elearning/service-worker.js",
   "static/css/main.235f47b3.chunk.css.map": "/elearning/static/css/main.235f47b3.chunk.css.map",
   "static/media/AD.svg": "/elearning/static/media/AD.30e74864.svg",

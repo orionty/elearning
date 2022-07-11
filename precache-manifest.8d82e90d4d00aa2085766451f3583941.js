@@ -1084,7 +1084,7 @@ self.__precacheManifest = [
     "url": "/elearning/static/media/ZW.381136e4.svg"
   },
   {
-    "revision": "1859664970bea0881e653bc6a50c48e5",
+    "revision": "d3770d001ed04c97b038d2c40db07886",
     "url": "/elearning/index.html"
   }
 ];

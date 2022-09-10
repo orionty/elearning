@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "3c0c97fc23a4fe7a5083",
+    "revision": "f1c87e20ff68f7506c03",
     "url": "/elearning/static/css/main.1baf87ff.chunk.css"
   },
   {
-    "revision": "3c0c97fc23a4fe7a5083",
-    "url": "/elearning/static/js/main.99e56f71.chunk.js"
+    "revision": "f1c87e20ff68f7506c03",
+    "url": "/elearning/static/js/main.ef32422f.chunk.js"
   },
   {
     "revision": "c88e40a0b5fc1db135ad",
@@ -1084,7 +1084,7 @@ self.__precacheManifest = [
     "url": "/elearning/static/media/ZW.381136e4.svg"
   },
   {
-    "revision": "243c1be57f674a61cf007dbdc98909f0",
+    "revision": "f37a1001941726697849950e42225107",
     "url": "/elearning/index.html"
   }
 ];

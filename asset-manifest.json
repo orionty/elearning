@@ -1,7 +1,7 @@
 {
   "main.css": "/elearning/static/css/main.f6540fec.chunk.css",
-  "main.js": "/elearning/static/js/main.d5959464.chunk.js",
-  "main.js.map": "/elearning/static/js/main.d5959464.chunk.js.map",
+  "main.js": "/elearning/static/js/main.34f14e2d.chunk.js",
+  "main.js.map": "/elearning/static/js/main.34f14e2d.chunk.js.map",
   "runtime~main.js": "/elearning/static/js/runtime~main.5ff9fa24.js",
   "runtime~main.js.map": "/elearning/static/js/runtime~main.5ff9fa24.js.map",
   "static/js/2.09c0a05a.chunk.js": "/elearning/static/js/2.09c0a05a.chunk.js",
@@ -9,7 +9,7 @@
   "static/js/3.1986731f.chunk.js": "/elearning/static/js/3.1986731f.chunk.js",
   "static/js/3.1986731f.chunk.js.map": "/elearning/static/js/3.1986731f.chunk.js.map",
   "index.html": "/elearning/index.html",
-  "precache-manifest.dcfaa1611b56a63edcb6884db44019c5.js": "/elearning/precache-manifest.dcfaa1611b56a63edcb6884db44019c5.js",
+  "precache-manifest.374c3afa857abaf59517a5ffb891f78c.js": "/elearning/precache-manifest.374c3afa857abaf59517a5ffb891f78c.js",
   "service-worker.js": "/elearning/service-worker.js",
   "static/css/main.f6540fec.chunk.css.map": "/elearning/static/css/main.f6540fec.chunk.css.map",
   "static/media/Application'sOfNewtonLaws.pdf": "/elearning/static/media/Application'sOfNewtonLaws.a36e7168.pdf",

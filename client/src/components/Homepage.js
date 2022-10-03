@@ -7,7 +7,7 @@ import HomeSearchBar from "./HomeSearchBar";
 
 function Homepage() {
     return(
-        <div>
+        <div >
            <HomeSearchBar  />
            <Background />
            <Cards />

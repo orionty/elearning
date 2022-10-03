@@ -1,158 +1,86 @@
-import React, { useState } from "react";
-import IntlTelInput from "react-bootstrap-intl-tel-input";
-import { Modal, Button } from "react-bootstrap";
-import {FaCcVisa,FaCcMastercard,FaCcAmex,FaCcDiscover} from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import { Button, Modal } from "react-bootstrap";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
+import CheckoutForm from "../stripe/CheckoutForm";
+const stripePromise = loadStripe("pk_test_51LoFDZEfLeh0BZ6edBz9cndsEeCX2jgJoxCtcACXPynH2k5Zhegvb1ejLyaqRcGhCPOVcREgZ8YXMg8PlzoK0J5G00mYMlsWo6");
+
 
 function MachineLearningCart() {
-  const [show, setShow] = useState(false);
+  const [lgShow, setLgShow] = useState(false);
+  const [clientSecret, setClientSecret] = useState("");
+ 
+  useEffect(() => {
+    // Create PaymentIntent as soon as the page loads
+    fetch("http://localhost:3001/machine-learning-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [{ id: "Machine Learning" }] }),
+    })
+      .then((res) => res.json())
+      .then((data) => setClientSecret(data.clientSecret));
+  }, []);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const appearance = {
+    theme: 'stripe',
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
+
+  const [MLFirstName, setMLFirstName] = useState("");
+  const [MLLastName, setMLLastName] = useState("");
+  const [ML_email, setMLEmail] = useState("");
+  const [MLPhoneNumber, setMLPhoneNumber] = useState("");
+  const [ML_country, setMLCountry] = useState("");
+  const [ML_course, setMLCourse] = useState("");
+
+  const submitRequest = async (e) => {
+    e.preventDefault();
+    const response = await fetch(
+      "http://localhost:3001/register/machine/learning",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ ML_email, MLFirstName, MLLastName, MLPhoneNumber,ML_country,ML_course }),
+      }
+    );
+    const resData = await response.json();
+    if (resData.status === "success") {
+      alert("Your form Sent Sucessfully.");
+    } else if (resData.status === "fail") {
+      alert("Form failed to send.");
+    }
+    window.location.reload();
+  };
 
   return (
-    <div>
+    <div >
       <>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Payment </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-
-          <div className="container d-flex justify-content-center align-items-center">
-            <a href><FaCcVisa className="m-1 fs-1" /></a>
-            <a href><FaCcMastercard className="m-1 fs-1" /></a>
-            <a href><FaCcAmex className="m-1 fs-1" /></a>
-            <a href><FaCcDiscover className="m-1 fs-1" /></a>
-          </div>
-          <br />
-
-            <div>
-              <label
-                for="validationTooltip01"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-                Name on Card
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationTooltip01"
-                placeholder="James Wood"
-                name="card_name"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-            <div>
-              <label
-                for="validationTooltip02"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-               Credit card number
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationTooltip02"
-                placeholder="1111-2222-3333-4444"
-                name="card_name"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-            <div>
-              <label
-                for="validationTooltip03"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-               Expiration
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationTooltip03"
-                placeholder="MM/YY"
-                name="expiration"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-            <div>
-              <label
-                for="validationTooltip04"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-               CVV
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationTooltip04"
-                placeholder="CVC"
-                name="cvv"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-        
-
-            <div>
-              <label
-                for="validationTooltip06"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-              Amount
-              </label>
-              <input
-                type="number"
-                class="form-control"
-                id="validationTooltip06"
-                value={175}
-                name="amount"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-            <div>
-              <label
-                for="validationTooltip07"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-              Country
-              </label>
-              <input
-                type="country"
-                class="form-control"
-                id="validationTooltip07"
-                placeholder="United States"
-                name="card_country"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Pay $175
-            </Button>
-          </Modal.Footer>
-        </Modal>
+      <Modal
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg" >
+           Payment Details/Machine Learning
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            {clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+         <CheckoutForm />
+        </Elements>
+      )}
+        </Modal.Body>
+      </Modal>
       </>
 
       <section>
@@ -167,7 +95,11 @@ function MachineLearningCart() {
               Please fill all the fields below.
             </p>
 
-            <form class="row g-3 needs-validation" novalidate>
+            <form
+              onSubmit={submitRequest}
+              class="row g-3 needs-validation"
+              novalidate
+            >
               <div class="col-md-4 position-relative">
                 <label
                   for="validationTooltip01"
@@ -181,8 +113,10 @@ function MachineLearningCart() {
                   class="form-control"
                   id="validationTooltip01"
                   placeholder="first name"
-                  name="first_name"
+                  name="MLFirstName"
                   required
+                  onChange={(e) => setMLFirstName(e.target.value)}
+                  value={MLFirstName}
                 />
                 <div class="valid-tooltip">Looks good!</div>
               </div>
@@ -199,8 +133,10 @@ function MachineLearningCart() {
                   class="form-control"
                   id="validationTooltip03"
                   placeholder="last name"
-                  name="last_name"
+                  name="MLLastName"
                   required
+                  onChange={(e) => setMLLastName(e.target.value)}
+                  value={MLLastName}
                 />
                 <div class="valid-tooltip">Looks good!</div>
               </div>
@@ -218,8 +154,10 @@ function MachineLearningCart() {
                   class="form-control"
                   id="validationTooltip03"
                   placeholder="example@gmail.com"
-                  name="machine_email"
+                  name="ML_email"
                   required
+                  onChange={(e) => setMLEmail(e.target.value)}
+                  value={ML_email}
                 />
                 <div class="invalid-tooltip">please provide correct email</div>
               </div>
@@ -232,13 +170,17 @@ function MachineLearningCart() {
                 >
                   Phone Number
                 </label>
-
-                <IntlTelInput
-                  preferredCountries={["US", "GB"]}
-                  defaultCountry={"US"}
-                  defaultValue={"+1 409-444-4444"}
-                  name={"phone_name"}
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationTooltip07"
+                  placeholder="+1 409-444-4444"
+                  name="MLPhoneNumber"
+                  required
+                  onChange={(e) => setMLPhoneNumber(e.target.value)}
+                  value={MLPhoneNumber}
                 />
+               
                 <div class="invalid-tooltip">
                   please provide correct phone number
                 </div>
@@ -253,12 +195,14 @@ function MachineLearningCart() {
                   Country
                 </label>
                 <input
-                  type="country"
+                  type="text"
                   class="form-control"
                   id="validationTooltip07"
                   placeholder="country name"
-                  name="country"
+                  name="ML_country"
                   required
+                  onChange={(e) => setMLCountry(e.target.value)}
+                  value={ML_country}
                 />
                 <div class="valid-tooltip">Looks good!</div>
               </div>
@@ -275,9 +219,11 @@ function MachineLearningCart() {
                   type="text"
                   class="form-control"
                   id="validationTooltip02"
-                  value={"Machine Learning"}
-                  name="machine_learning"
+                  placeholder="enter machine learning..."
+                  name="ML_course"
                   required
+                  onChange={(e) => setMLCourse(e.target.value)}
+                  value={ML_course}
                 />
                 <div class="valid-tooltip">Looks good!</div>
               </div>
@@ -290,14 +236,7 @@ function MachineLearningCart() {
                 >
                   Submit form
                 </button>
-                <a
-                  href
-                  className="text-decoration-none"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleShow}
-                >
-                  click here to make payment
-                </a>
+                <Button onClick={() => setLgShow(true)}>Pay Now</Button>
               </div>
             </form>
           </section>

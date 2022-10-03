@@ -1,10 +1,15 @@
 import React,{useState} from "react";
 import {FaFacebookF,FaTwitter, FaWhatsapp,FaLinkedinIn,FaInstagram } from "react-icons/fa";
+import {BsFillArrowUpSquareFill} from "react-icons/bs"
+import {RiWhatsappFill} from "react-icons/ri"
 import{Modal,Button} from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import {useScrollToTop} from '../components/ScrollToTop'
+
 
 function Footer(){
   const [show, setShow] = useState(false);
-
+  const setScrollToTop = useScrollToTop(true);
   const handleClose = () => setShow(false);
   // const handleShow = () => setShow(true);
     return(
@@ -60,37 +65,45 @@ function Footer(){
     
     <ul class="list-unstyled ">
       <li >
-        <a class="text-decoration-none text-light borderBtn" href="/online_tutor">Become Online Tutor</a>
+        <Link class="text-decoration-none text-light borderBtn" to="/online_tutor">Become Online Tutor</Link>
       </li>
       <li>
-        <a class="text-decoration-none text-light borderBtn" href="/about">About</a>
+        <Link class="text-decoration-none text-light borderBtn" to="/about">About</Link>
       </li>
       <li>
-      <a href ="/contact-us" class="text-decoration-none text-light borderBtn" >Contact</a>
+      <Link to ="/contact-us" class="text-decoration-none text-light borderBtn" >Contact</Link>
       </li>
       <li>
       
-        <a href ="/" class="text-decoration-none text-light borderBtn" >Home</a>
+        <Link to ="/" class="text-decoration-none text-light borderBtn" >Home</Link>
       </li>
     </ul>
         </div>
         <hr class="clearfix w-100 d-md-none" />
     
         <div class="col-md-2 mx-auto">
-        <h5 class="fw-normal text-capitalize mt-3 mb-4 borderBtn">Customer Service</h5>
+        <h5 class="fw-normal text-capitalize mt-3 mb-4 borderBtn">Social Media Groups</h5>
     
     <ul class="list-unstyled">
+      
       <li>
-      <a href ="/SignIn" class="text-decoration-none text-light borderBtn" >Your Account</a>
+        <a href="https://chat.whatsapp.com/Cli4Yx9O0d6AgGFJEPE7l7" target="_blank"
+                rel="noopener noreferrer" class="text-decoration-none text-light borderBtn" >WhatsApp</a>
       </li>
       <li>
-        <a  class="text-decoration-none text-light borderBtn" href="# ">Become an Affiliate</a>
+      <Link to ="/SignIn" class="text-decoration-none text-light" >Facebook</Link>
       </li>
       <li>
-        <a class="text-decoration-none text-light borderBtn" href="# ">Pages</a>
+      <a href="https://t.me/+VuQ-VeA7FmkwNTg0" target="_blank"
+                rel="noopener noreferrer" class="text-decoration-none text-light" >Telegram</a>
       </li>
       <li>
-      <a href ="/SignIn" class="text-decoration-none text-light" >Sign In</a>
+      <a href="https://chat.whatsapp.com/Cli4Yx9O0d6AgGFJEPE7l7" target="_blank"
+                rel="noopener noreferrer" class="text-decoration-none text-light" >Twitter</a>
+      </li>
+      <li>
+      <a href="https://chat.whatsapp.com/Cli4Yx9O0d6AgGFJEPE7l7" target="_blank"
+                rel="noopener noreferrer" class="text-decoration-none text-light" >Instagram</a>
       </li>
     </ul>
         </div>
@@ -100,16 +113,16 @@ function Footer(){
     
     <ul class="list-unstyled">
       <li>
-      <a href style={{cursor:"pointer"}}    class="text-decoration-none text-light borderBtn" >Copyright Policy</a>
+      <Link to="#"style={{cursor:"pointer"}}    class="text-decoration-none text-light borderBtn" >Copyright Policy</Link>
       </li>
       <li>
-      <a href="/privacy_policy" style={{cursor:"pointer"}}  class="text-decoration-none text-light borderBtn"  >Privacy Policy</a>
+      <Link to="/privacy_policy" style={{cursor:"pointer"}}  class="text-decoration-none text-light borderBtn"  >Privacy Policy</Link>
       </li>
       <li>
-      <a href style={{cursor:"pointer"}}   class="text-decoration-none text-light borderBtn" >Term Of Use</a>
+      <Link to="/term-of-use" style={{cursor:"pointer"}}   class="text-decoration-none text-light borderBtn" >Term Of Use</Link>
       </li>
       <li>
-        <a href style={{cursor:"pointer"}}   class="text-decoration-none text-light borderBtn" >References</a>
+        <Link to="#" style={{cursor:"pointer"}}   class="text-decoration-none text-light borderBtn" >References</Link>
       </li>
     </ul>
         </div>
@@ -119,10 +132,14 @@ function Footer(){
       <hr />
       <ul class="list-unstyled list-inline text-center py-2">
         <li class="list-inline-item">
-          <h5 class="mb-1 text-light">Register Now</h5>
+          <h5 class="mb-1 text-light">E-learning Forum</h5>
         </li>
         <li class="list-inline-item">
-        <a href ="user_register" class="text-decoration-none text-light btn btn-info btn-rounded" >Sign Up</a>
+        <a href="https://chat.whatsapp.com/Cli4Yx9O0d6AgGFJEPE7l7" class="text-decoration-none text-light btn btn-info btn-rounded" target="_blank"
+                rel="noopener noreferrer" >Join Now <RiWhatsappFill className="fs-1 p-1" /></a>
+        </li>
+        <li class="list-inline-item float-end" onClick={() => setScrollToTop(true)}>
+        <BsFillArrowUpSquareFill  className="fs-1 p-1"/>
         </li>
       </ul>
       <hr />

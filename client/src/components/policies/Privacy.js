@@ -1,178 +1,77 @@
 import React from "react";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
+import { useScrollToTop } from "../ScrollToTop";
 
 function Privacy() {
+  const setScrollToTop = useScrollToTop(true);
   return (
-    <div>
+    <div onClick={() => setScrollToTop(true)}>
       <NavBar />
       <div className="container shadow-lg pt-5 pb-5 ps-3 pe-3 mb-5 bg-body rounded">
-        <h3>Privacy Policy </h3>
-        <p className="fw-bold mb-2">Last updated July 06, 2022</p>
-        <p>
-          This privacy notice for E-learning (<b>'Company'</b>, <b>'we'</b>,{" "}
-          <b>'us'</b>, or <b>'our'</b>,), describes how and why we might
-          collect, store, use, and/or share (<b>'process'</b>) your information
-          when you use our services (<b>'Services'</b>), such as when you:
-          <ul>
-            <li>
-              Visit our website at{" "}
-              <a href="www.elearning.com" className="text-decoration-none">
-                www.elearning.com
-              </a>
-              , or any website of ours that links to this privacy notice
-            </li>
-            <li>
-              Engage with us in other related ways, including any sales,
-              marketing, or events
-            </li>
-          </ul>
-        </p>
+      <h2>Elearning Privacy Policy</h2>
+<p>Your privacy is important to us. It is Elearning&#39;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <a href="https://www.elearning.com">https://www.elearning.com</a>, and other sites we own and operate. </p>
+<p>This policy is effective as of 2 October 2022 and was last updated on 2 October 2022. </p>
+<h3>Information We Collect</h3>
+<p>Information we collect includes both information you knowingly and actively provide us when using or participating in any of our services and promotions, and any information automatically sent by your devices in the course of accessing our products and services. </p>
+<h4>Log Data</h4>
+<p>When you visit our website, our servers may automatically log the standard data provided by your web browser. It may include your device’s Internet Protocol (IP) address, your browser type and version, the pages you visit, the time and date of your visit, the time spent on each page, other details about your visit, and technical details that occur in conjunction with any errors you may encounter. </p>
+<p>Please be aware that while this information may not be personally identifying by itself, it may be possible to combine it with other data to personally identify individual persons. </p>
+<h4>Personal Information</h4>
+<p>We may ask for personal information which may include one or more of the following: </p>
+<ul>
+   <li>Name</li>
+   <li>Email</li>
+   <li>Social media profiles</li>
+   <li>Phone/mobile number</li>
+</ul>
+<h4>Legitimate Reasons for Processing Your Personal Information</h4>
+<p>We only collect and use your personal information when we have a legitimate reason for doing so. In which instance, we only collect personal information that is reasonably necessary to provide our services to you. </p>
+<h4>Collection and Use of Information</h4>
+<p>We may collect personal information from you when you do any of the following on our website: </p>
+<ul>
+   <li>Sign up to receive updates from us via email or social media channels</li>
+   <li>Use a mobile device or web browser to access our content</li>
+   <li>Contact us via email, social media, or on any similar technologies</li>
+   <li>When you mention us on social media</li>
+</ul>
+<p>We may collect, hold, use, and disclose information for the following purposes, and personal information will not be further processed in a manner that is incompatible with these purposes: </p>
+<p>We may collect, hold, use, and disclose information for the following purposes, and personal information will not be further processed in a manner that is incompatible with these purposes: </p>
+<ul>
+   <li>to enable you to customise or personalise your experience of our website </li>
+   <li>for internal record keeping and administrative purposes</li>
+   <li>for security and fraud prevention, and to ensure that our sites and apps are safe, secure, and used in line with our terms of use</li>
+</ul>
+<p>Please be aware that we may combine information we collect about you with general information or research data we receive from other trusted sources. </p>
+<h4>Security of Your Personal Information</h4>
+<p>When we collect and process personal information, and while we retain this information, we will protect it within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use, or modification. </p>
+<p>Although we will do our best to protect the personal information you provide to us, we advise that no method of electronic transmission or storage is 100% secure, and no one can guarantee absolute data security. We will comply with laws applicable to us in respect of any data breach. </p>
+<p>You are responsible for selecting any password and its overall security strength, ensuring the security of your own information within the bounds of our services. </p>
+<h4>How Long We Keep Your Personal Information</h4>
+<p>We keep your personal information only for as long as we need to. This time period may depend on what we are using your information for, in accordance with this privacy policy. If your personal information is no longer required, we will delete it or make it anonymous by removing all details that identify you. </p>
+<p>However, if necessary, we may retain your personal information for our compliance with a legal, accounting, or reporting obligation or for archiving purposes in the public interest, scientific, or historical research purposes or statistical purposes. </p>
+<h3>Children’s Privacy</h3>
+<p>We do not aim any of our products or services directly at children under the age of 13, and we do not knowingly collect personal information about children under 13. </p>
+<h3>International Transfers of Personal Information</h3>
+<p>The personal information we collect is stored and/or processed where we or our partners, affiliates, and third-party providers maintain facilities. Please be aware that the locations to which we store, process, or transfer your personal information may not have the same data protection laws as the country in which you initially provided the information. If we transfer your personal information to third parties in other countries: (i) we will perform those transfers in accordance with the requirements of applicable law; and (ii) we will protect the transferred personal information in accordance with this privacy policy. </p>
+<h3>Your Rights and Controlling Your Personal Information</h3>
+<p>You always retain the right to withhold personal information from us, with the understanding that your experience of our website may be affected. We will not discriminate against you for exercising any of your rights over your personal information. If you do provide us with personal information you understand that we will collect, hold, use and disclose it in accordance with this privacy policy. You retain the right to request details of any personal information we hold about you. </p>
+<p>If we receive personal information about you from a third party, we will protect it as set out in this privacy policy. If you are a third party providing personal information about somebody else, you represent and warrant that you have such person’s consent to provide the personal information to us. </p>
+<p>If you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time. We will provide you with the ability to unsubscribe from our email-database or opt out of communications. Please be aware we may need to request specific information from you to help us confirm your identity. </p>
+<p>If you believe that any information we hold about you is inaccurate, out of date, incomplete, irrelevant, or misleading, please contact us using the details provided in this privacy policy. We will take reasonable steps to correct any information found to be inaccurate, incomplete, misleading, or out of date. </p>
+<p>If you believe that we have breached a relevant data protection law and wish to make a complaint, please contact us using the details below and provide us with full details of the alleged breach. We will promptly investigate your complaint and respond to you, in writing, setting out the outcome of our investigation and the steps we will take to deal with your complaint. You also have the right to contact a regulatory body or data protection authority in relation to your complaint. </p>
+<h3>Use of Cookies</h3>
+<p>We use &ldquo;cookies&rdquo; to collect information about you and your activity across our site. A cookie is a small piece of data that our website stores on your computer, and accesses each time you visit, so we can understand how you use our site. This helps us serve you content based on preferences you have specified. </p>
+<h3>Limits of Our Policy</h3>
+<p>Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and policies of those sites, and cannot accept responsibility or liability for their respective privacy practices. </p>
+<h3>Changes to This Policy</h3>
+<p>At our discretion, we may change our privacy policy to reflect updates to our business processes, current acceptable practices, or legislative or regulatory changes. If we decide to change this privacy policy, we will post the changes here at the same link by which you are accessing this privacy policy. </p>
+<p>If required by law, we will get your permission or give you the opportunity to opt in to or opt out of, as applicable, any new uses of your personal information. </p>
+<h3>Contact Us</h3>
+<p>For any questions or concerns regarding your privacy, you may contact us using the following details: </p>
+<p>Orionty<br />
+okyereamponsah78@gmail.com </p>
 
-        <p className="mb-3">
-          <b>Questions or concerns?</b> Reading this privacy notice will help
-          you understand your privacy rights and choices. If you do not agree
-          with our policies and practices, please do not use our Services. If
-          you still have any questions or concerns, please contact us at
-          oriontyweb@gmail.com.
-        </p>
-        <h6 className="fw-bold">SUMMARY OF KEY POINTS</h6>
-        <p className="mb-3">
-          This summary provides key points from our privacy notice, but you can
-          find out more details about any of these topics by clicking the link
-          following each key point or by using our table of contents below to
-          find the section you are looking for.
-        </p>
-
-        <p className="mb-3">
-          <b>What personal information do we process?</b> When you visit, use,
-          or navigate our Services, we may process personal information
-          depending on how you interact with E-learning and the Services, the
-          choices you make, and the products and features you use.
-        </p>
-
-        <p className="mb-3">
-          <b>Do we process any sensitive personal information?</b> We do not
-          process sensitive personal information.
-        </p>
-        <p className="mb-3">
-          <b> Do we receive any information from third parties?</b> We may
-          receive information from public databases, marketing partners, social
-          media platforms, and other outside sources.
-        </p>
-
-        <p>
-          <b> How do we process your information?</b> We process your
-          information to provide, improve, and administer our Services,
-          communicate with you, for security and fraud prevention, and to comply
-          with law. We may also process your information for other purposes with
-          your consent. We process your information only when we have a valid
-          legal reason to do so
-        </p>
-
-        <p>
-          <b>
-            {" "}
-            In what situations and with which parties do we share personal
-            information?
-          </b>{" "}
-          We may share information in specific situations and with specific
-          third parties.
-        </p>
-        <p>
-          <b> How do we keep your information safe?</b> We have organisational
-          and technical processes and procedures in place to protect your
-          personal information. However, no electronic transmission over the
-          internet or information storage technology can be guaranteed to be
-          100% secure, so we cannot promise or guarantee that hackers,
-          cybercriminals, or other unauthorised third parties will not be able
-          to defeat our security and improperly collect, access, steal, or
-          modify your information
-        </p>
-        <p>
-          <b>What are your rights? </b> Depending on where you are located
-          geographically, the applicable privacy law may mean you have certain
-          rights regarding your personal information.
-        </p>
-
-        <h2>TABLE OF CONTENTS</h2>
-        <div className="mb-5">
-          <ol>
-            <li>WHAT INFORMATION DO WE COLLECT ?</li>
-            <li>HOW DO WE PROGRESS YOUR INFORMATION ?</li>
-            <li>
-              WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR PERSONAL
-              INFORMATION
-            </li>
-            <li>DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES ?</li>
-            <li>HOW DO WE HANDLE YOUR SOCIAL</li>
-            <li>HOW LONG DO WE KEEP YOUR INFORMATION ?</li>
-            <li>HOW DO WE KEEP YOUR INFORMATION SAFE ?</li>
-            <li>WHAT ARE YOUR PRIVACY RIGHTS ?</li>
-            <li>CONTROLS FOR DO NOT TRACK FEATURES</li>
-            <li>DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS ?</li>
-            <li>DO WE MAKE UPDATES TO THIS NOTICE ?</li>
-            <li>HOW CAN YOU CONTACT US ABOUT THIS NOTICE ?</li>
-            <li>
-              HOW CAN YOU REVIEW UPDATE OR DELETE THE DATA WE COLLECT FROM YOU ?
-            </li>
-          </ol>
-        </div>
-
-        <div>
-          <ol>
-            <li className="fw-bold">WHAT INFORMATION DO WE COLLECT ?</li>
-          </ol>
-          <h6>
-            <b>Personal information you disclose to us</b>
-          </h6>
-          <p>
-            <i>
-              <b>In Short:</b> We collect personal information that you provide
-              to us.
-            </i>
-          </p>
-          <p>
-            We collect personal information that you voluntarily provide to us
-            when you register on the Services, express an interest in obtaining
-            information about us or our products and Services, when you
-            participate in activities on the Services, or otherwise when you
-            contact us.
-          </p>
-
-          <p>
-            <b>Personal Information Provided by You.</b> The personal
-            information that we collect depends on the context of your
-            interactions with us and the Services, the choices you make, and the
-            products and features you use. The personal information we collect
-            may include the following:
-          </p>
-          <ol>
-            <li>names</li>
-            <li>phone numbers</li>
-            <li>email addresses</li>
-            <li>passwords</li>
-            <li>usernames</li>
-            <li>debit/credit card numbers</li>
-          </ol>
-          <p>
-            <b>Sensitive Information. </b> We do not process sensitive
-            information.
-          </p>
-          <p>
-            <b>Social Media Login Data.</b> We may provide you with the option
-            to register with us using your existing social media account
-            details, like your Facebook, Twitter, or other social media account.
-            If you choose to register in this way, we will collect the
-            information described in the section called 'HOW DO WE HANDLE YOUR
-            SOCIAL LOGINS?' below.
-          </p>
-          <p>
-            All personal information that you provide to us must be true,
-            complete, and accurate, and you must notify us of any changes to
-            such personal information.
-          </p>
-        </div>
       </div>
       <br />
       <Footer />

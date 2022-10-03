@@ -8,14 +8,18 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import {useScrollToTop} from '../components/ScrollToTop'
 
 function About() {
+  const setScrollToTop = useScrollToTop(true);
+  
   return (
-    <div>
+    <div onClick={() => setScrollToTop(true)}>
       <NavBar />
       <div>
         <video class="background-video" loop autoPlay muted>
-          <source src="/img/about.mp4" type="video/mp4" />
+          <source src="img/about.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -42,7 +46,7 @@ function About() {
           </div>
 
           <Card className="child-container3 mt-5 shadow-lg p-0 mb-5 bg-body rounded ">
-            <Card.Img src="/img/group-learning.jpg" alt="Group learning" />
+            <Card.Img src="img/group-learning.jpg" alt="Group learning" />
             
           </Card>
           <p className="fw-bold text-center mb-4 fs-2 instructor-visibility">
@@ -56,7 +60,7 @@ function About() {
             style={{ height: 350 }}
           >
             <Card.Img
-              src="/img/educators.png"
+              src="img/educators.png"
               className="online-tutor"
               alt="Group learning"
             />
@@ -107,34 +111,34 @@ function About() {
           <div class="column about-column">
             <div class="card about-card">
               <img
-                src="/Img/orionty.jpg"
-                alt="Orionty"
+                src="img/men-avatar.png"
+                alt="James Brown"
                 className="rounded"
                 style={{ width: "100%",height:350,objectFit:"cover" }}
               />
               <div class="container about-container">
-                <h2>Orionty</h2>
+                <h2>James Brown</h2>
                 <p class="title-container">Software Developer</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>oriontyweb@example.com</p>
+                <p>james98@example.com</p>
                 <div className="mb-2 d-flex justify-content-center align-items">
-                  <a href="www.whatsapp.com" className="fs-3 mx-2">
+                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
                     <FaWhatsapp />
-                  </a>
-                  <a href="www.facebook.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.facebook.com" className="fs-3 mx-2">
                     <FaFacebookSquare />
-                  </a>
-                  <a href="www.instagram.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.instagram.com" className="fs-3 mx-2">
                     <FaInstagram />
-                  </a>
-                  <a href="www.twitter.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.twitter.com" className="fs-3 mx-2">
                     <FaTwitter />
-                  </a>
+                  </Link>
                 </div>
                 <p>
-                  <a href="tel:+233553311567">
+                  <Link to="tel:+233553311567">
                     <button class="button-container">Contact</button>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -143,7 +147,7 @@ function About() {
           <div class="column about-column">
             <div class="card about-card">
               <img
-                src="/Img/orionty.jpg"
+                src="img/men-avatar.png"
                 alt="Mike"
                 className="rounded"
                 style={{ width: "100%",height:350,objectFit:"cover" }}
@@ -154,23 +158,23 @@ function About() {
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>mike@example.com</p>
                 <div className="mb-2 d-flex justify-content-center align-items">
-                  <a href="www.whatsapp.com" className="fs-3 mx-2">
+                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
                     <FaWhatsapp />
-                  </a>
-                  <a href="www.facebook.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.facebook.com" className="fs-3 mx-2">
                     <FaFacebookSquare />
-                  </a>
-                  <a href="www.instagram.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.instagram.com" className="fs-3 mx-2">
                     <FaInstagram />
-                  </a>
-                  <a href="www.twitter.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.twitter.com" className="fs-3 mx-2">
                     <FaTwitter />
-                  </a>
+                  </Link>
                 </div>
                 <p>
-                  <a href="tel:+233553311567">
+                  <Link to="tel:+233553311567">
                     <button class="button-container">Contact</button>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -179,7 +183,7 @@ function About() {
           <div class="column about-column">
             <div class="card about-card">
               <img
-                src="/Img/orionty.jpg"
+                src="img/men-avatar.png"
                 alt="Peter Walker"
                 className="rounded"
                 style={{ width: "100%",height:350,objectFit:"cover" }}
@@ -190,23 +194,23 @@ function About() {
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>peterwalker782@example.com</p>
                 <div className="mb-2 d-flex justify-content-center align-items">
-                  <a href="www.whatsapp.com" className="fs-3 mx-2">
+                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
                     <FaWhatsapp />
-                  </a>
-                  <a href="www.facebook.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.facebook.com" className="fs-3 mx-2">
                     <FaFacebookSquare />
-                  </a>
-                  <a href="www.instagram.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.instagram.com" className="fs-3 mx-2">
                     <FaInstagram />
-                  </a>
-                  <a href="www.twitter.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.twitter.com" className="fs-3 mx-2">
                     <FaTwitter />
-                  </a>
+                  </Link>
                 </div>
                 <p>
-                  <a href="tel:+233553311567">
+                  <Link to="tel:+233553311567">
                     <button class="button-container">Contact</button>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -225,7 +229,7 @@ function About() {
           <div class="column about-column">
             <div class="card about-card">
               <img
-                src="/Img/orionty.jpg"
+                src="img/orionty.jpg"
                 alt="Orionty"
                 className="rounded"
                 style={{ width: "100%",height:350,objectFit:"cover" }}
@@ -236,23 +240,23 @@ function About() {
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>oriontyweb@example.com</p>
                 <div className="mb-2 d-flex justify-content-center align-items">
-                  <a href="www.whatsapp.com" className="fs-3 mx-2">
+                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
                     <FaWhatsapp />
-                  </a>
-                  <a href="www.facebook.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.facebook.com" className="fs-3 mx-2">
                     <FaFacebookSquare />
-                  </a>
-                  <a href="www.instagram.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.instagram.com" className="fs-3 mx-2">
                     <FaInstagram />
-                  </a>
-                  <a href="www.twitter.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.twitter.com" className="fs-3 mx-2">
                     <FaTwitter />
-                  </a>
+                  </Link>
                 </div>
                 <p>
-                  <a href="tel:+233553311567">
+                  <Link to="tel:+233553311567">
                     <button class="button-container">Contact</button>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -261,7 +265,7 @@ function About() {
           <div class="column about-column">
             <div class="card about-card">
               <img
-                src="/Img/orionty.jpg"
+                src="img/men-avatar.png"
                 alt="Mike"
                 className="rounded"
                 style={{ width: "100%",height:350,objectFit:"cover" }}
@@ -272,23 +276,23 @@ function About() {
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>mike@example.com</p>
                 <div className="mb-2 d-flex justify-content-center align-items">
-                  <a href="www.whatsapp.com" className="fs-3 mx-2">
+                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
                     <FaWhatsapp />
-                  </a>
-                  <a href="www.facebook.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.facebook.com" className="fs-3 mx-2">
                     <FaFacebookSquare />
-                  </a>
-                  <a href="www.instagram.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.instagram.com" className="fs-3 mx-2">
                     <FaInstagram />
-                  </a>
-                  <a href="www.twitter.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.twitter.com" className="fs-3 mx-2">
                     <FaTwitter />
-                  </a>
+                  </Link>
                 </div>
                 <p>
-                  <a href="tel:+233553311567">
+                  <Link to="tel:+233553311567">
                     <button class="button-container">Contact</button>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -297,7 +301,7 @@ function About() {
           <div class="column about-column">
             <div class="card about-card">
               <img
-                src="/Img/orionty.jpg"
+                src="img/men-avatar.png"
                 alt="Peter Walker"
                 className="rounded"
                 style={{ width: "100%",height:350,objectFit:"cover" }}
@@ -308,23 +312,23 @@ function About() {
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>peterwalker782@example.com</p>
                 <div className="mb-2 d-flex justify-content-center align-items">
-                  <a href="www.whatsapp.com" className="fs-3 mx-2">
+                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
                     <FaWhatsapp />
-                  </a>
-                  <a href="www.facebook.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.facebook.com" className="fs-3 mx-2">
                     <FaFacebookSquare />
-                  </a>
-                  <a href="www.instagram.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.instagram.com" className="fs-3 mx-2">
                     <FaInstagram />
-                  </a>
-                  <a href="www.twitter.com" className="fs-3 mx-2">
+                  </Link>
+                  <Link to="www.twitter.com" className="fs-3 mx-2">
                     <FaTwitter />
-                  </a>
+                  </Link>
                 </div>
                 <p>
-                  <a href="tel:+233553311567">
+                  <Link to="tel:+233553311567">
                     <button class="button-container">Contact</button>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>

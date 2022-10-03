@@ -15,7 +15,8 @@ function PagesNavBar() {
         <Nav>
         <Nav.Link className="navLinkHover"><Link to ="/" className="text-decoration-none navitem" id="#home">Home</Link></Nav.Link>
         <Nav.Link className="navLinkHover"><Link to ="/programs" className="text-decoration-none navitem" id="#campuses">Programs</Link></Nav.Link>
-        <Nav.Link className="navLinkHover"><Link to ="/questions" className="text-decoration-none navitem" id="#popular">Questions</Link></Nav.Link>
+        <Nav.Link className="navLinkHover"><Link to ="/questions" className="text-decoration-none navitem" id="#questions">Questions</Link></Nav.Link>
+        <Nav.Link className="navLinkHover"><Link to ="/discussion" className="text-decoration-none navitem" id="#discussion">Discussion</Link></Nav.Link>
         <Nav.Link className="navLinkHover"><Link to ="/contact-us" className="text-decoration-none navitem" id="#about">Contact</Link></Nav.Link>
         <Nav.Link className="navLinkHover"><Link to ="/about" className="text-decoration-none navitem" id="#contact">About</Link></Nav.Link>
          
@@ -28,7 +29,10 @@ function PagesNavBar() {
                   Become a Tutor
                 </Link>
               </Nav.Link>
-              <button type="button" className="btn" style={{backgroundColor:"navy",color:"white"}}>Sign Up</button>
+              <a href="https://chat.whatsapp.com/Cli4Yx9O0d6AgGFJEPE7l7" target="_blank"
+                rel="noopener noreferrer">
+              <button type="button" className="btn" style={{backgroundColor:"navy",color:"white"}}>Join Now</button>
+              </a>
            </div>
       
         </Navbar.Collapse>

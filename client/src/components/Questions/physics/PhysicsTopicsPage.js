@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../Footer";
 import NavBar from "../../Navbar";
 
@@ -87,9 +88,9 @@ function PhysicsTopicsPage() {
         <h6>Topics</h6>
         {Topics.map((topic) => (
           <div>
-            <a href={topic.link}>
+            <Link to={topic.link}>
               <p key={topic.id}> {topic.topic}</p>
-            </a>
+            </Link>
            
           </div>
         ))}

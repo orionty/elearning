@@ -197,7 +197,37 @@ padding: 1px;
 @media screen and (min-width: 480px) {
 
 .search-width{
-  width: 500px;
+  width: 400px;
+ 
+}
+.linearFormBg{
+  background-image: linear-gradient(to right, rgb(10, 10, 10), rgb(22, 22, 19));
+  opacity: 0.5;
+  height:100%
+  
+}
+.btnBorder{
+  border-bottom: 2px solid white;
+}
+.login-form-overlay{
+  color: white;
+}
+.login-btn{
+  background-color: navy;
+  width: 100%;
+  color: white;
+}
+.login-btn:hover{
+  color: white;
+}
+.login-btn:active{
+  color: white;
+  background-color: orange;
+}
+.form-image-bg{
+  width: 100%;
+  object-fit: cover;
+  height: 610px;
 }
 
   .online-tutor{

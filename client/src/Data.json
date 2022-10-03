@@ -1,7 +1,7 @@
 [
 {
     "id":1,
-    "mainContent": "physics",
+    "mainContent": "Physics",
     "link": "/physics"
    
 },
@@ -117,6 +117,18 @@
     "id":20,
     "mainContent":"Python",
     "link": "/python"
+  
+},
+{
+    "id":21,
+    "mainContent":"Show that the expression v = at, where v represents speed, acceleration, and t an instant of time, is dimensionally correct.",
+    "link": "/physics/measurement"
+  
+},
+{
+    "id":22,
+    "mainContent":"The mass of a solid cube is 856 g, and each edge has a length of 5.35 cm. Determine the density ρ of the cube in basic SI units.",
+    "link": "/physics/measurement"
   
 }
 

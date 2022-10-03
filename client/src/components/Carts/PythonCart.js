@@ -1,158 +1,91 @@
-import React, { useState } from "react";
-import IntlTelInput from "react-bootstrap-intl-tel-input";
-import { Modal, Button } from "react-bootstrap";
-import {FaCcVisa,FaCcMastercard,FaCcAmex,FaCcDiscover} from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import { Button, Modal } from "react-bootstrap";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
+import CheckoutForm from "../stripe/CheckoutForm";
+const stripePromise = loadStripe("pk_test_51LoFDZEfLeh0BZ6edBz9cndsEeCX2jgJoxCtcACXPynH2k5Zhegvb1ejLyaqRcGhCPOVcREgZ8YXMg8PlzoK0J5G00mYMlsWo6");
 
 function PythonCart() {
-  const [show, setShow] = useState(false);
+  const [lgShow, setLgShow] = useState(false);
+  const [clientSecret, setClientSecret] = useState("");
+ 
+  useEffect(() => {
+    // Create PaymentIntent as soon as the page loads
+    fetch("http://localhost:3001/python-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [{ id: "Python" }] }),
+    })
+      .then((res) => res.json())
+      .then((data) => setClientSecret(data.clientSecret));
+  }, []);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const appearance = {
+    theme: 'stripe',
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
+
+  const [PythonFirstName, setPythonFirstName] = useState("");
+  const [PythonLastName, setPythonLastName] = useState("");
+  const [Python_email, setPythonEmail] = useState("");
+  const [PythonPhoneNumber, setPythonPhoneNumber] = useState("");
+  const [Python_country, setPythonCountry] = useState("");
+  const [Python_course, setPythonCourse] = useState("");
+
+ 
+
+  const submitRequest = async (e) => {
+    e.preventDefault();
+    const response = await fetch("http://localhost:3001/register/python", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        Python_email,
+        PythonFirstName,
+        PythonLastName,
+        PythonPhoneNumber,
+        Python_country,
+        Python_course,
+      }),
+    });
+    const resData = await response.json();
+    if (resData.status === "success") {
+      alert("Your form Sent Sucessfully.");
+    } else if (resData.status === "fail") {
+      alert("Form failed to send.");
+    }
+    window.location.reload();
+  };
 
   return (
-    <div>
+    <div >
       <>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Payment </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-
-          <div className="container d-flex justify-content-center align-items-center">
-            <a href><FaCcVisa className="m-1 fs-1" /></a>
-            <a href><FaCcMastercard className="m-1 fs-1" /></a>
-            <a href><FaCcAmex className="m-1 fs-1" /></a>
-            <a href><FaCcDiscover className="m-1 fs-1" /></a>
-          </div>
-          <br />
-
-            <div>
-              <label
-                for="validationTooltip01"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-                Name on Card
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationTooltip01"
-                placeholder="James Wood"
-                name="card_name"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-            <div>
-              <label
-                for="validationTooltip02"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-               Credit card number
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationTooltip02"
-                placeholder="1111-2222-3333-4444"
-                name="card_name"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-            <div>
-              <label
-                for="validationTooltip03"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-               Expiration
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationTooltip03"
-                placeholder="MM/YY"
-                name="expiration"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-            <div>
-              <label
-                for="validationTooltip04"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-               CVV
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationTooltip04"
-                placeholder="CVC"
-                name="cvv"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-        
-
-            <div>
-              <label
-                for="validationTooltip06"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-              Amount
-              </label>
-              <input
-                type="number"
-                class="form-control"
-                id="validationTooltip06"
-                value={130}
-                name="amount"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-            <div>
-              <label
-                for="validationTooltip07"
-                class="form-label"
-                style={{ color: "navy" }}
-              >
-              Country
-              </label>
-              <input
-                type="country"
-                class="form-control"
-                id="validationTooltip07"
-                placeholder="United States"
-                name="card_country"
-                required
-              />
-              <div class="valid-tooltip">Looks good!</div>
-            </div>
-
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Pay $130
-            </Button>
-          </Modal.Footer>
-        </Modal>
+      <Modal
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg" >
+           Payment Details/Python
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            {clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+         <CheckoutForm />
+        </Elements>
+      )}
+        </Modal.Body>
+      </Modal>
       </>
 
       <section>
@@ -167,7 +100,11 @@ function PythonCart() {
               Please fill all the fields below.
             </p>
 
-            <form class="row g-3 needs-validation" novalidate>
+            <form
+              onSubmit={submitRequest}
+              class="row g-3 needs-validation"
+              novalidate
+            >
               <div class="col-md-4 position-relative">
                 <label
                   for="validationTooltip01"
@@ -181,8 +118,10 @@ function PythonCart() {
                   class="form-control"
                   id="validationTooltip01"
                   placeholder="first name"
-                  name="first_name"
+                  name="PythonFirstName"
                   required
+                  onChange={(e) => setPythonFirstName(e.target.value)}
+                  value={PythonFirstName}
                 />
                 <div class="valid-tooltip">Looks good!</div>
               </div>
@@ -199,8 +138,10 @@ function PythonCart() {
                   class="form-control"
                   id="validationTooltip03"
                   placeholder="last name"
-                  name="last_name"
+                  name="PythonLastName"
                   required
+                  onChange={(e) => setPythonLastName(e.target.value)}
+                  value={PythonLastName}
                 />
                 <div class="valid-tooltip">Looks good!</div>
               </div>
@@ -218,8 +159,10 @@ function PythonCart() {
                   class="form-control"
                   id="validationTooltip03"
                   placeholder="example@gmail.com"
-                  name="python_email"
+                  name="Python_email"
                   required
+                  onChange={(e) => setPythonEmail(e.target.value)}
+                  value={Python_email}
                 />
                 <div class="invalid-tooltip">please provide correct email</div>
               </div>
@@ -232,13 +175,17 @@ function PythonCart() {
                 >
                   Phone Number
                 </label>
-
-                <IntlTelInput
-                  preferredCountries={["US", "GB"]}
-                  defaultCountry={"US"}
-                  defaultValue={"+1 409-444-4444"}
-                  name={"phone_name"}
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationTooltip07"
+                  placeholder="+1 409-444-4444"
+                  name="PythonPhoneNumber"
+                  required
+                  onChange={(e) => setPythonPhoneNumber(e.target.value)}
+                  value={PythonPhoneNumber}
                 />
+
                 <div class="invalid-tooltip">
                   please provide correct phone number
                 </div>
@@ -253,12 +200,14 @@ function PythonCart() {
                   Country
                 </label>
                 <input
-                  type="country"
+                  type="text"
                   class="form-control"
                   id="validationTooltip07"
                   placeholder="country name"
-                  name="country"
+                  name="Python_country"
                   required
+                  onChange={(e) => setPythonCountry(e.target.value)}
+                  value={Python_country}
                 />
                 <div class="valid-tooltip">Looks good!</div>
               </div>
@@ -275,9 +224,11 @@ function PythonCart() {
                   type="text"
                   class="form-control"
                   id="validationTooltip02"
-                  value={"Python"}
-                  name="python"
+                  placeholder="enter python..."
+                  name="Python_course"
                   required
+                  onChange={(e) => setPythonCourse(e.target.value)}
+                  value={Python_course}
                 />
                 <div class="valid-tooltip">Looks good!</div>
               </div>
@@ -290,14 +241,7 @@ function PythonCart() {
                 >
                   Submit form
                 </button>
-                <a
-                  href
-                  className="text-decoration-none"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleShow}
-                >
-                  click here to make payment
-                </a>
+                <Button onClick={() => setLgShow(true)}>Pay Now</Button>
               </div>
             </form>
           </section>

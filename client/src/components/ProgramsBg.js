@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 
 function ProgramsBg() {
     return(
@@ -8,7 +8,7 @@ function ProgramsBg() {
   <div>
     
     <Card>
-  <Card.Img src="/img/programBg.jpg"  className="programBg" alt="Card image" />
+  <Card.Img src="img/programBg.jpg"  className="programBg" alt="Card image" />
   <Card.ImgOverlay className="linearBgCopy">
 
   </Card.ImgOverlay>
@@ -18,7 +18,7 @@ function ProgramsBg() {
     Making an impact in Classrooms and Communities.
     </Card.Text>
     
-    <Link to ="/"><button type="button" class="btn btnBg">Newsletter Subscribe</button></Link>
+    <button type="button" class="btn btnBg">Newsletter Subscribe</button>
   </Card.ImgOverlay>
 </Card> 
 

@@ -1,5 +1,5 @@
 {
-  "main.css": "/elearning/static/css/main.9c747e4b.chunk.css",
+  "main.css": "/elearning/static/css/main.31ac130e.chunk.css",
   "main.js": "/elearning/static/js/main.5a652610.chunk.js",
   "main.js.map": "/elearning/static/js/main.5a652610.chunk.js.map",
   "runtime~main.js": "/elearning/static/js/runtime~main.5f74a9af.js",
@@ -9,9 +9,9 @@
   "static/js/3.3ac76c6f.chunk.js": "/elearning/static/js/3.3ac76c6f.chunk.js",
   "static/js/3.3ac76c6f.chunk.js.map": "/elearning/static/js/3.3ac76c6f.chunk.js.map",
   "index.html": "/elearning/index.html",
-  "precache-manifest.0bfcc245853f0c6d9dd0a0d5f26c8d4e.js": "/elearning/precache-manifest.0bfcc245853f0c6d9dd0a0d5f26c8d4e.js",
+  "precache-manifest.bb1fb83cdfad252f394ea289c3dc7409.js": "/elearning/precache-manifest.bb1fb83cdfad252f394ea289c3dc7409.js",
   "service-worker.js": "/elearning/service-worker.js",
-  "static/css/main.9c747e4b.chunk.css.map": "/elearning/static/css/main.9c747e4b.chunk.css.map",
+  "static/css/main.31ac130e.chunk.css.map": "/elearning/static/css/main.31ac130e.chunk.css.map",
   "static/media/AlternatingCurrentCircuits.pdf": "/elearning/static/media/AlternatingCurrentCircuits.6a631057.pdf",
   "static/media/Application'sOfNewtonLaws.pdf": "/elearning/static/media/Application'sOfNewtonLaws.a36e7168.pdf",
   "static/media/CapacitanceAndDielectrics.pdf": "/elearning/static/media/CapacitanceAndDielectrics.8db9e0e6.pdf",

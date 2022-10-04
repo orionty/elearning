@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c813399e963cbc063cf2",
+    "revision": "b75c284c199dfcbc243d",
     "url": "/elearning/static/css/main.9c747e4b.chunk.css"
   },
   {
-    "revision": "c813399e963cbc063cf2",
-    "url": "/elearning/static/js/main.8524f68c.chunk.js"
+    "revision": "b75c284c199dfcbc243d",
+    "url": "/elearning/static/js/main.d0d9542f.chunk.js"
   },
   {
     "revision": "859d964e9feaa15a2974",
@@ -172,7 +172,7 @@ self.__precacheManifest = [
     "url": "/elearning/static/media/EssentialIdeas.0af552b2.pdf"
   },
   {
-    "revision": "592fe27c1b0f75d2a12f8ce0f11b1b0f",
+    "revision": "a2a4ef8bde24328eeb0472b78a45393e",
     "url": "/elearning/index.html"
   }
 ];

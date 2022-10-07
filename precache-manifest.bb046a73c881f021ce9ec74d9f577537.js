@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "22b67e67e48d6d3ddcc4",
+    "revision": "0193effd24f79af7339f",
     "url": "/elearning/static/css/main.86bd9c3d.chunk.css"
   },
   {
-    "revision": "22b67e67e48d6d3ddcc4",
-    "url": "/elearning/static/js/main.c30471c8.chunk.js"
+    "revision": "0193effd24f79af7339f",
+    "url": "/elearning/static/js/main.25658de2.chunk.js"
   },
   {
     "revision": "34a92e3f40ec7b8a945b",
@@ -176,7 +176,7 @@ self.__precacheManifest = [
     "url": "/elearning/static/media/AtomsMoleculesAndIons.d0de647b.pdf"
   },
   {
-    "revision": "b44d9605a6eea7c9c2e5969f282f6165",
+    "revision": "66d2d354aecf9fc11f402a0f470e2156",
     "url": "/elearning/index.html"
   }
 ];

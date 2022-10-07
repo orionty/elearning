@@ -176,7 +176,7 @@ self.__precacheManifest = [
     "url": "/elearning/static/media/AtomsMoleculesAndIons.d0de647b.pdf"
   },
   {
-    "revision": "9b54dc29e8eececf228a38ff0297c1c2",
+    "revision": "44122b0cb306feff9870d50156c2718c",
     "url": "/elearning/index.html"
   }
 ];

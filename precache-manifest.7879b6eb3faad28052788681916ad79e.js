@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b6b0a70b58f6968262cc",
+    "revision": "5fdfef58ab11a562363c",
     "url": "/elearning/static/css/main.86bd9c3d.chunk.css"
   },
   {
-    "revision": "b6b0a70b58f6968262cc",
-    "url": "/elearning/static/js/main.86fbccae.chunk.js"
+    "revision": "5fdfef58ab11a562363c",
+    "url": "/elearning/static/js/main.4c26b374.chunk.js"
   },
   {
     "revision": "17ba438c875dcc15c158",
@@ -168,7 +168,7 @@ self.__precacheManifest = [
     "url": "/elearning/static/media/DiffractionAndPolarization.ecae2477.pdf"
   },
   {
-    "revision": "1fe297a76f7d29b13f841b9a8a530fd7",
+    "revision": "9ce059869a54054359128b9b22709a63",
     "url": "/elearning/index.html"
   }
 ];

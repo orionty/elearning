@@ -1,34 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { Button, Modal } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
-import CheckoutForm from "../stripe/CheckoutForm";
-const stripePromise = loadStripe("pk_test_51LoFDZEfLeh0BZ6edBz9cndsEeCX2jgJoxCtcACXPynH2k5Zhegvb1ejLyaqRcGhCPOVcREgZ8YXMg8PlzoK0J5G00mYMlsWo6");
+
 
 function WebCart() {
-  const [lgShow, setLgShow] = useState(false);
-  const [clientSecret, setClientSecret] = useState("");
- 
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:3001/web-development-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "Web Development" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
-
-  const appearance = {
-    theme: 'stripe',
-  };
-  const options = {
-    clientSecret,
-    appearance,
-  };
 
 
   const [firstName, setFirstName] = useState("");
@@ -43,7 +19,7 @@ function WebCart() {
   const submitRequest = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:3001/register/web/development",
+      "https://elearning-server-app.herokuapp.com/register/web/development",
       {
         method: "POST",
         headers: {
@@ -64,27 +40,6 @@ function WebCart() {
   return (
     <div >
         
-     <>
-     <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg" >
-           Payment Details/Web Development
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-         <CheckoutForm />
-        </Elements>
-      )}
-        </Modal.Body>
-      </Modal>
-     </>
 
       <section>
         <NavBar />
@@ -239,7 +194,10 @@ function WebCart() {
                 >
                   Submit form
                 </button>
-                <Button onClick={() => setLgShow(true)}>Pay Now</Button>
+                <a href="https://buy.stripe.com/5kA5nF1b19pKaaY5kk">
+
+                <Button>Pay Now</Button>
+                </a>
               </div>
             </form>
           </section>

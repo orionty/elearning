@@ -39,7 +39,7 @@ class OnlineTutors extends React.Component {
     e.preventDefault();
     axios({
       method: "POST",
-      url: "http://localhost:3001/online/tutors",
+      url: "https://elearning-server-app.herokuapp.com/online/tutors",
       data: this.state,
     }).then((response) => {
       if (response.data.status === "success") {

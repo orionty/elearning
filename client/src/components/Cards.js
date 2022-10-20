@@ -3,13 +3,14 @@ import { CardGroup, Card, Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import {RiWhatsappFill} from 'react-icons/ri'
+import {GrCertificate} from 'react-icons/gr'
 
 function Cards() {
   const [subEmail, setsubEmail] = useState("");
 
   const submitNewletter = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3001/newsletter", {
+    const response = await fetch("https://elearning-server-app.herokuapp.com/newsletter", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -92,7 +93,7 @@ function Cards() {
               <Card.Text className="headText">
                 The stars are laboratories in which the evolution of matter
                 proceeds in the direction of large molecules.
-                <span className="span-coming-soon">coming soon</span>
+                <span className="span">available now</span>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -124,7 +125,7 @@ function Cards() {
               <Card.Text className="headText">
                 Mathematics is the most beautiful and most powerful creation of
                 the human spirit.
-                <span className="span-coming-soon">coming soon</span>
+                <span className="span">available now</span>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -156,7 +157,7 @@ function Cards() {
               <Card.Text className="headText">
                 Our world is built on biology and once we begin to understand
                 it, it then becomes a technology.
-                <span className="span-coming-soon">coming soon</span>
+                <span className="span">available now</span>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -166,7 +167,7 @@ function Cards() {
         class="container d-flex justify-content-end vMore"
         style={{ color: "navy", cursor: "pointer" }}
       >
-        <Link to="/programs" style={{ textDecoration: "none" }}>
+        <Link to="/courses" style={{ textDecoration: "none" }}>
           view more&nbsp;&nbsp; <FaLongArrowAltRight />
         </Link>
       </div>
@@ -177,7 +178,7 @@ function Cards() {
             Effective Learning And Teaching
           </h3>
           <p className="align-middle ">
-            E-Learning gives you better thoughts, better ideas, better
+            Esurde gives you better thoughts, better ideas, better
             solutions, better understanding, better skills and better awareness
           </p>
           <a href="https://chat.whatsapp.com/Cli4Yx9O0d6AgGFJEPE7l7" target="_blank"
@@ -187,12 +188,13 @@ function Cards() {
               class="btn shadow-lg mb-5 rounded-pill mt-5 p-2 fw-bold"
               style={{ color: "white", backgroundColor: "navy" }}
             >
-              Join E-Learning Forum <RiWhatsappFill className="fs-1 p-1" />
+              Join ESURDE FORUM <RiWhatsappFill className="fs-1 p-1" />
             </button>
           </a>
         </div>
 
         <div className="child-container2">
+          
           <img
             src={`${process.env.PUBLIC_URL}/img/learningG.jpg`}
             alt="learning-Groups"
@@ -241,7 +243,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        $115
+                        $40.65 <s className="fs-6">$84.87</s>
                       </h4>
                       <h4
                         style={{
@@ -250,7 +252,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        Web Development
+                        Web Development Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -260,6 +262,7 @@ function Cards() {
                         }}
                       >
                         Basic to professional web development
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -282,7 +285,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        $79
+                        $33.46 <s className="fs-6">$76.46</s>
                       </h4>
                       <h4
                         style={{
@@ -291,7 +294,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        Graphic Designing
+                        Graphic Designing Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -301,6 +304,7 @@ function Cards() {
                         }}
                       >
                         Basic to professional graphic designing
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -323,7 +327,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        $118
+                        $44.67 <s className="fs-6">$84.87</s>
                       </h4>
                       <h4
                         style={{
@@ -332,7 +336,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        Mobile App Development
+                         App Development Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -341,7 +345,8 @@ function Cards() {
                           fontSize: "12px",
                         }}
                       >
-                        Basic to professional app development
+                        Basic to professional mobile app development
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -371,7 +376,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        $120
+                        $35.99 <s className="fs-6">$79.99</s>
                       </h4>
                       <h4
                         style={{
@@ -380,7 +385,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        Data Science
+                        Data Science Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -390,6 +395,7 @@ function Cards() {
                         }}
                       >
                         Basic to professional data science
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -412,7 +418,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        $125
+                        $36.99 <s className="fs-6">$83.99</s>
                       </h4>
                       <h4
                         style={{
@@ -421,7 +427,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        Artificial Intelligence
+                        Artificial Intelligence Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -431,6 +437,7 @@ function Cards() {
                         }}
                       >
                         Basic to professional artificial intelligence
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -453,7 +460,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        $120
+                        $36.99 <s className="fs-6">$83.99</s>
                       </h4>
                       <h4
                         style={{
@@ -462,7 +469,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        Machine Learning
+                        Machine Learning Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -472,6 +479,7 @@ function Cards() {
                         }}
                       >
                         Basic to professional machine learning
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -480,6 +488,7 @@ function Cards() {
             </div>
             <Carousel.Caption></Carousel.Caption>
           </Carousel.Item>
+
           <Carousel.Item>
             <div class="container">
               <div className="row-container">
@@ -498,7 +507,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        $90
+                        $45.99 <s className="fs-6">$85.99</s>
                       </h4>
                       <h4
                         style={{
@@ -507,7 +516,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        Python
+                        Python Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -517,6 +526,7 @@ function Cards() {
                         }}
                       >
                         Basic to professional python
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -536,7 +546,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        $87
+                        $45.99 <s className="fs-6">$85.99</s>
                       </h4>
                       <h4
                         style={{
@@ -545,7 +555,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        C++
+                        C++ Programming Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -555,6 +565,7 @@ function Cards() {
                         }}
                       >
                         Basic to professional c++
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -574,7 +585,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        $89
+                        $44.99 <s className="fs-6">$83.99</s>
                       </h4>
                       <h4
                         style={{
@@ -583,7 +594,7 @@ function Cards() {
                           fontWeight: "bold",
                         }}
                       >
-                        Java
+                        Java Programming Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -593,6 +604,7 @@ function Cards() {
                         }}
                       >
                         Basic to professional java
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>

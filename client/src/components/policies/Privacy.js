@@ -9,8 +9,8 @@ function Privacy() {
     <div onClick={() => setScrollToTop(true)}>
       <NavBar />
       <div className="container shadow-lg pt-5 pb-5 ps-3 pe-3 mb-5 bg-body rounded">
-      <h2>Elearning Privacy Policy</h2>
-<p>Your privacy is important to us. It is Elearning&#39;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <a href="https://www.elearning.com">https://www.elearning.com</a>, and other sites we own and operate. </p>
+      <h2>Esurde Privacy Policy</h2>
+<p>Your privacy is important to us. It is Esurde&#39;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <a href="https://www.esurde.com">https://www.esurde.com</a>, and other sites we own and operate. </p>
 <p>This policy is effective as of 2 October 2022 and was last updated on 2 October 2022. </p>
 <h3>Information We Collect</h3>
 <p>Information we collect includes both information you knowingly and actively provide us when using or participating in any of our services and promotions, and any information automatically sent by your devices in the course of accessing our products and services. </p>
@@ -70,7 +70,7 @@ function Privacy() {
 <h3>Contact Us</h3>
 <p>For any questions or concerns regarding your privacy, you may contact us using the following details: </p>
 <p>Orionty<br />
-okyereamponsah78@gmail.com </p>
+orionty@esurde.com </p>
 
       </div>
       <br />

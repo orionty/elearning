@@ -12,8 +12,8 @@ const nodemailer = require('nodemailer');
 const { resolve4 } = require('dns');
 const { Server } = require("socket.io");
 
-// This is your test secret API key.
-const stripe = require("stripe")('sk_test_51LoFDZEfLeh0BZ6e2oQDXDGAKPiNrUkEQ8608IDFuKIC7mwFAFLaoXaQXruYSjLBnl4dsJIOsTMHz4zZuFpHCvys00Dscp22gT');
+
+const stripe = require("stripe")('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');
 
 
 const server = http.createServer(app);
@@ -46,8 +46,9 @@ app.use(cors())
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
+    origin: "https://esurde.com",
+    allowedHeaders: ["my-custom-header"],
+    credentials: true
     
   },
 });
@@ -87,13 +88,15 @@ app.use("/img", express.static(path.join(__dirname, "public/img")));
 app.use("/css", express.static(path.join(__dirname, "public/css")));
 app.use("/js", express.static(path.join(__dirname, "public/js")));
 
-
+app.get("/", (req, res) => {
+  res.send("Hello API")
+}); 
 // stripe for web development
 app.post("/web-development-payment-intent", async (req, res) => {
   
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 11500,
+    amount: 4065,
     currency: "usd",
     automatic_payment_methods: {
       enabled: true,
@@ -110,7 +113,7 @@ app.post("/app-development-payment-intent", async (req, res) => {
 
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 11800,
+    amount: 4467,
     currency: "usd",
     automatic_payment_methods: {
       enabled: true,
@@ -127,7 +130,7 @@ app.post("/data-science-payment-intent", async (req, res) => {
 
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 12000,
+    amount: 3599,
     currency: "usd",
     automatic_payment_methods: {
       enabled: true,
@@ -144,7 +147,7 @@ app.post("/artificial-intelligence-payment-intent", async (req, res) => {
 
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 12500,
+    amount: 3699,
     currency: "usd",
     automatic_payment_methods: {
       enabled: true,
@@ -160,7 +163,7 @@ app.post("/machine-learning-payment-intent", async (req, res) => {
  
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 12000,
+    amount: 3699,
     currency: "usd",
     automatic_payment_methods: {
       enabled: true,
@@ -176,7 +179,7 @@ app.post("/python-payment-intent", async (req, res) => {
 
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 9000,
+    amount: 4599,
     currency: "usd",
     automatic_payment_methods: {
       enabled: true,
@@ -192,7 +195,7 @@ app.post("/java-payment-intent", async (req, res) => {
 
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 8900,
+    amount: 4499,
     currency: "usd",
     automatic_payment_methods: {
       enabled: true,
@@ -209,7 +212,7 @@ app.post("/cplus-payment-intent", async (req, res) => {
 
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 8700,
+    amount: 4599,
     currency: "usd",
     automatic_payment_methods: {
       enabled: true,
@@ -226,7 +229,7 @@ app.post("/graphic-designing-payment-intent", async (req, res) => {
 
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 7900,
+    amount: 3346,
     currency: "usd",
     automatic_payment_methods: {
       enabled: true,

@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { Button, Modal } from "react-bootstrap";
+import React, { useState} from "react";
+
+import { Button } from "react-bootstrap";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
-import CheckoutForm from "../stripe/CheckoutForm";
-const stripePromise = loadStripe("pk_test_51LoFDZEfLeh0BZ6edBz9cndsEeCX2jgJoxCtcACXPynH2k5Zhegvb1ejLyaqRcGhCPOVcREgZ8YXMg8PlzoK0J5G00mYMlsWo6");
-
 
 function GraphicDesignCart() {
-  
-  const [lgShow, setLgShow] = useState(false);
-
-  const [clientSecret, setClientSecret] = useState("");
-
-  
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [design_email, setDesignEmail] = useState("");
@@ -22,34 +12,23 @@ function GraphicDesignCart() {
   const [design_country, setDesignCountry] = useState("");
   const [design_course, setDesignCourse] = useState("");
 
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:3001/graphic-designing-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "Graphic Designing" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
-  const appearance = {
-    theme: 'stripe',
-  };
-  const options = {
-    clientSecret,
-    appearance,
-  };
-
   const submitRequest = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:3001/register/graphic/designing",
+      "https://elearning-server-app.herokuapp.com/register/graphic/designing",
       {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ design_email, firstname, lastname, phonenumber,design_country,design_course }),
+        body: JSON.stringify({
+          design_email,
+          firstname,
+          lastname,
+          phonenumber,
+          design_country,
+          design_course,
+        }),
       }
     );
     const resData = await response.json();
@@ -63,29 +42,6 @@ function GraphicDesignCart() {
 
   return (
     <div>
-      
-      <>
-      <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg" >
-           Payment Details/Graphic Designing
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-         <CheckoutForm />
-        </Elements>
-      )}
-        </Modal.Body>
-      </Modal>
-      </>
-
       <section>
         <NavBar />
         <br />
@@ -98,7 +54,11 @@ function GraphicDesignCart() {
               Please fill all the fields below.
             </p>
 
-            <form  onSubmit={submitRequest} class="row g-3 needs-validation" novalidate>
+            <form
+              onSubmit={submitRequest}
+              class="row g-3 needs-validation"
+              novalidate
+            >
               <div class="col-md-4 position-relative">
                 <label
                   for="validationTooltip01"
@@ -235,7 +195,9 @@ function GraphicDesignCart() {
                 >
                   Submit form
                 </button>
-                <Button onClick={() => setLgShow(true)}>Pay Now</Button>
+                <a href="https://buy.stripe.com/9AQ6rJf1R9pK82QeUV">
+                  <Button>Pay Now</Button>
+                </a>
               </div>
             </form>
           </section>

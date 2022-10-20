@@ -1,37 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { Button,Modal } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
-import CheckoutForm from "../stripe/CheckoutForm";
-const stripePromise = loadStripe("pk_test_51LoFDZEfLeh0BZ6edBz9cndsEeCX2jgJoxCtcACXPynH2k5Zhegvb1ejLyaqRcGhCPOVcREgZ8YXMg8PlzoK0J5G00mYMlsWo6");
-
-
 
 function CplusLanguageCart() {
-  const [lgShow, setLgShow] = useState(false);
-  const [clientSecret, setClientSecret] = useState("");
- 
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:3001/cplus-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "C++" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
-
-  const appearance = {
-    theme: 'stripe',
-  };
-  const options = {
-    clientSecret,
-    appearance,
-  };
-
   const [CpFirstname, setCpFirstName] = useState("");
   const [CpLastname, setCpLastName] = useState("");
   const [cp_email, setCpEmail] = useState("");
@@ -39,19 +11,23 @@ function CplusLanguageCart() {
   const [cp_country, setCpCountry] = useState("");
   const [cp_course, setCpCourse] = useState("");
 
-  
- 
-
   const submitRequest = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:3001/register/cplus",
+      "https://elearning-server-app.herokuapp.com/register/cplus",
       {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ cp_email, CpFirstname, CpLastname, CpPhonenumber,cp_country,cp_course }),
+        body: JSON.stringify({
+          cp_email,
+          CpFirstname,
+          CpLastname,
+          CpPhonenumber,
+          cp_country,
+          cp_course,
+        }),
       }
     );
     const resData = await response.json();
@@ -63,31 +39,8 @@ function CplusLanguageCart() {
     window.location.reload();
   };
 
- 
-
   return (
     <div>
-      <>
-      <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg" >
-           Payment Details/C++
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-         <CheckoutForm />
-        </Elements>
-      )}
-        </Modal.Body>
-      </Modal>
-      </>
       <section>
         <NavBar />
         <br />
@@ -100,7 +53,11 @@ function CplusLanguageCart() {
               Please fill all the fields below.
             </p>
 
-            <form  onSubmit={submitRequest} class="row g-3 needs-validation" novalidate>
+            <form
+              onSubmit={submitRequest}
+              class="row g-3 needs-validation"
+              novalidate
+            >
               <div class="col-md-4 position-relative">
                 <label
                   for="validationTooltip01"
@@ -237,7 +194,9 @@ function CplusLanguageCart() {
                 >
                   Submit form
                 </button>
-                <Button onClick={() => setLgShow(true)}>Pay Now</Button>
+                <a href="https://buy.stripe.com/aEUaHZ3j931maaY5kr">
+                  <Button>Pay Now</Button>
+                </a>
               </div>
             </form>
           </section>

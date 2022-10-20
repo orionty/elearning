@@ -8,7 +8,7 @@ function Background() {
   <div>
     
     <Card>
-  <Card.Img src="img/learnBg.png"  alt="Group Learning" />
+  <Card.Img src="img/learnBg.png" className="backgroundHeight"  alt="Group Learning" />
   <Card.ImgOverlay className="linearBg">
 
   </Card.ImgOverlay>
@@ -18,7 +18,7 @@ function Background() {
     The best and cheapest way of getting to know learning to make a better tomorrow.
     </Card.Text>
     
-    <Link to ="/programs"><button type="button" class="btn btnBg">Get Started</button></Link>
+    <Link to ="/courses"><button type="button" class="btn btnBg">Get Started</button></Link>
   </Card.ImgOverlay>
 </Card> 
 

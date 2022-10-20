@@ -1,37 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { Modal, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
-import CheckoutForm from "../stripe/CheckoutForm";
-const stripePromise = loadStripe("pk_test_51LoFDZEfLeh0BZ6edBz9cndsEeCX2jgJoxCtcACXPynH2k5Zhegvb1ejLyaqRcGhCPOVcREgZ8YXMg8PlzoK0J5G00mYMlsWo6");
-
 
 function AIcart() {
-  const [lgShow, setLgShow] = useState(false);
-  const [clientSecret, setClientSecret] = useState("");
- 
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:3001/artificial-intelligence-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "Artificial Intelligence" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
-
-  const appearance = {
-    theme: 'stripe',
-  };
-  const options = {
-    clientSecret,
-    appearance,
-  };
-
-
   const [AIFirstName, setAIFirstName] = useState("");
   const [AILastName, setAILastName] = useState("");
   const [AI_email, setAIEmail] = useState("");
@@ -39,17 +11,23 @@ function AIcart() {
   const [AI_country, setAICountry] = useState("");
   const [AI_course, setAICourse] = useState("");
 
- 
   const submitRequest = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:3001/register/artificial/intelligence",
+      "https://elearning-server-app.herokuapp.com/register/artificial/intelligence",
       {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ AI_email, AIFirstName, AILastName, AIPhoneNumber,AI_country,AI_course }),
+        body: JSON.stringify({
+          AI_email,
+          AIFirstName,
+          AILastName,
+          AIPhoneNumber,
+          AI_country,
+          AI_course,
+        }),
       }
     );
     const resData = await response.json();
@@ -62,29 +40,7 @@ function AIcart() {
   };
 
   return (
-    <div >
-      <>
-      <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg" >
-           Payment Details/Artificial Intelligence
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-         <CheckoutForm />
-        </Elements>
-      )}
-        </Modal.Body>
-      </Modal>
-      </>
-
+    <div>
       <section>
         <NavBar />
         <br />
@@ -182,7 +138,7 @@ function AIcart() {
                   onChange={(e) => setAIPhoneNumber(e.target.value)}
                   value={AIPhoneNumber}
                 />
-               
+
                 <div class="invalid-tooltip">
                   please provide correct phone number
                 </div>
@@ -238,7 +194,9 @@ function AIcart() {
                 >
                   Submit form
                 </button>
-                <Button onClick={() => setLgShow(true)}>Pay Now</Button>
+                <a href="https://buy.stripe.com/28o7vN5rhcBWaaY9AI">
+                  <Button>Pay Now</Button>
+                </a>
               </div>
             </form>
           </section>

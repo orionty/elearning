@@ -3,13 +3,14 @@ import { CardGroup, Card, Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import NavBar from "./Navbar";
+import {GrCertificate} from 'react-icons/gr'
 
 function CourseQuestions() {
   const [subEmail, setsubEmail] = useState("");
 
   const submitNewletter = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3001/newsletter", {
+    const response = await fetch("https://elearning-server-app.herokuapp.com/newsletter", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -35,7 +36,7 @@ function CourseQuestions() {
           className=" text-uppercase fw-bold borderBtn"
           style={{ color: "navy" }}
         >
-          questions for each program
+          questions for each course
         </p>
       </div>
 
@@ -66,6 +67,7 @@ function CourseQuestions() {
                     PHYSICS
                   </Link>
                 </Card.Title>
+                <span className="span">available</span>
               </Card.Body>
             </Card>
             <Card
@@ -86,7 +88,9 @@ function CourseQuestions() {
                 >
                   CHEMISTRY
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
+              
             </Card>
             <Card
               className=" shadow-lg p-0 mb-5 bg-body rounded me-2"
@@ -106,6 +110,7 @@ function CourseQuestions() {
                 >
                   MATHEMATICS
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
             </Card>
             <Card
@@ -126,6 +131,7 @@ function CourseQuestions() {
                 >
                   BIOLOGY
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
             </Card>
 
@@ -149,6 +155,7 @@ function CourseQuestions() {
                 >
                   ACTUARIAL SCIENCE
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
             </Card>
 
@@ -170,6 +177,7 @@ function CourseQuestions() {
                 >
                   STATISTICS
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
             </Card>
           </CardGroup>
@@ -196,6 +204,7 @@ function CourseQuestions() {
                 >
                   BIOCHEMISTRY
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
             </Card>
             <Card
@@ -216,6 +225,7 @@ function CourseQuestions() {
                 >
                   ELECTRICAL ENGINEERING
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
             </Card>
 
@@ -223,7 +233,7 @@ function CourseQuestions() {
               className=" shadow-lg p-0 mb-5 bg-body rounded me-2"
               style={{ cursor: "pointer" }}
             >
-              <Link to="/computer_science">
+              <Link to="/computer_science/questions">
                 <Card.Img
                   variant="top"
                   src="img/computer-science.-icon1.png"
@@ -235,13 +245,14 @@ function CourseQuestions() {
               <Card.Body>
                 <Card.Title className="fs-6  text-center">
                   <Link
-                    to="/computer_science"
+                    to="/computer_science/questions"
                     className="text-decoration-none "
                     style={{ color: "navy" }}
                   >
                     COMPUTER SCIENCE
                   </Link>
                 </Card.Title>
+                <span className="span">available now</span>
               </Card.Body>
             </Card>
 
@@ -263,6 +274,7 @@ function CourseQuestions() {
                 >
                   COMPUTER ENGINEERING
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
             </Card>
             <Card
@@ -283,6 +295,7 @@ function CourseQuestions() {
                 >
                   OPTOMETRY
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
             </Card>
 
@@ -304,6 +317,7 @@ function CourseQuestions() {
                 >
                   ECONOMICS
                 </Card.Title>
+                <span className="span-coming-soon">coming soon</span>
               </Card.Body>
             </Card>
           </CardGroup>
@@ -349,7 +363,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        $115
+                       $40.65 <s className="fs-6">$84.87</s>
                       </h4>
                       <h4
                         style={{
@@ -358,7 +372,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        Web Development
+                        Web Development Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -368,6 +382,7 @@ function CourseQuestions() {
                         }}
                       >
                         Basic to professional web development
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -390,7 +405,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        $79
+                        $33.46 <s className="fs-6">$76.46</s>
                       </h4>
                       <h4
                         style={{
@@ -399,7 +414,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        Graphic Designing
+                        Graphic Designing Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -409,6 +424,7 @@ function CourseQuestions() {
                         }}
                       >
                         Basic to professional graphic designing
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -431,7 +447,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        $118
+                         $44.67 <s className="fs-6">$84.87</s>
                       </h4>
                       <h4
                         style={{
@@ -440,7 +456,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        App Development
+                        App Development Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -449,7 +465,8 @@ function CourseQuestions() {
                           fontSize: "12px",
                         }}
                       >
-                        Basic to professional app development
+                        Basic to professional mobile app development
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -479,7 +496,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        $120
+                        $35.99 <s className="fs-6">$79.99</s>
                       </h4>
                       <h4
                         style={{
@@ -488,7 +505,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        Data Science
+                        Data Science Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -498,6 +515,7 @@ function CourseQuestions() {
                         }}
                       >
                         Basic to professional data science
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -520,7 +538,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        $125
+                        $36.99 <s className="fs-6">$83.99</s>
                       </h4>
                       <h4
                         style={{
@@ -529,7 +547,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        Artificial Intelligence
+                        Artificial Intelligence Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -539,6 +557,7 @@ function CourseQuestions() {
                         }}
                       >
                         Basic to professional artificial intelligence
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -561,7 +580,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        $120
+                       $36.99 <s className="fs-6">$83.99</s>
                       </h4>
                       <h4
                         style={{
@@ -570,7 +589,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        Machine Learning
+                         Machine Learning Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -580,6 +599,7 @@ function CourseQuestions() {
                         }}
                       >
                         Basic to professional machine learning
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -606,7 +626,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        $90
+                       $45.99 <s className="fs-6">$85.99</s>
                       </h4>
                       <h4
                         style={{
@@ -615,7 +635,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        Python
+                        Python Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -625,6 +645,7 @@ function CourseQuestions() {
                         }}
                       >
                         Basic to professional python
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -644,7 +665,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        $87
+                      $45.99 <s className="fs-6">$85.99</s>
                       </h4>
                       <h4
                         style={{
@@ -653,7 +674,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        C++
+                        C++ Programming Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -663,6 +684,7 @@ function CourseQuestions() {
                         }}
                       >
                         Basic to professional c++
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>
@@ -682,7 +704,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        $95
+                        $44.99 <s className="fs-6">$83.99</s>
                       </h4>
                       <h4
                         style={{
@@ -691,7 +713,7 @@ function CourseQuestions() {
                           fontWeight: "bold",
                         }}
                       >
-                        Java
+                        Java Programming Bootcamp 2022
                       </h4>
                       <h5
                         style={{
@@ -701,6 +723,7 @@ function CourseQuestions() {
                         }}
                       >
                         Basic to professional java
+                        <br /><GrCertificate className="fs-2 p-1"/> Certificate of completion
                       </h5>
                     </div>
                   </Link>

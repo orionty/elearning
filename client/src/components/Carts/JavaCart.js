@@ -1,35 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { Button, Modal } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
-import CheckoutForm from "../stripe/CheckoutForm";
-const stripePromise = loadStripe("pk_test_51LoFDZEfLeh0BZ6edBz9cndsEeCX2jgJoxCtcACXPynH2k5Zhegvb1ejLyaqRcGhCPOVcREgZ8YXMg8PlzoK0J5G00mYMlsWo6");
 
 function JavaCart() {
-  const [lgShow, setLgShow] = useState(false);
-  const [clientSecret, setClientSecret] = useState("");
- 
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:3001/java-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "Java" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
-
-  const appearance = {
-    theme: 'stripe',
-  };
-  const options = {
-    clientSecret,
-    appearance,
-  };
-
   const [JavaFirstName, setJavaFirstName] = useState("");
   const [JavaLastName, setJavaLastName] = useState("");
   const [Java_email, setJavaEmail] = useState("");
@@ -37,18 +11,23 @@ function JavaCart() {
   const [Java_country, setJavaCountry] = useState("");
   const [Java_course, setJavaCourse] = useState("");
 
- 
-
   const submitRequest = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:3001/register/java",
+      "https://elearning-server-app.herokuapp.com/register/java",
       {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ Java_email, JavaFirstName, JavaLastName, JavaPhoneNumber,Java_country,Java_course }),
+        body: JSON.stringify({
+          Java_email,
+          JavaFirstName,
+          JavaLastName,
+          JavaPhoneNumber,
+          Java_country,
+          Java_course,
+        }),
       }
     );
     const resData = await response.json();
@@ -61,29 +40,7 @@ function JavaCart() {
   };
 
   return (
-    <div >
-      <>
-      <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg" >
-           Payment Details/Java
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-         <CheckoutForm />
-        </Elements>
-      )}
-        </Modal.Body>
-      </Modal>
-      </>
-
+    <div>
       <section>
         <NavBar />
         <br />
@@ -181,7 +138,7 @@ function JavaCart() {
                   onChange={(e) => setJavaPhoneNumber(e.target.value)}
                   value={JavaPhoneNumber}
                 />
-               
+
                 <div class="invalid-tooltip">
                   please provide correct phone number
                 </div>
@@ -237,7 +194,9 @@ function JavaCart() {
                 >
                   Submit form
                 </button>
-                <Button onClick={() => setLgShow(true)}>Pay Now</Button>
+                <a href="https://buy.stripe.com/28obM3dXN9pKcj66ou">
+                  <Button>Pay Now</Button>
+                </a>
               </div>
             </form>
           </section>

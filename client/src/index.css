@@ -119,7 +119,7 @@ body {
   .parent-container {
       
       display: flex;
-      justify-content: space-evenly
+      justify-content: space-evenly;
       
   }
   .parent-container1 {
@@ -155,8 +155,6 @@ body {
 /* learnImg hover */
 .learnImg:hover{
   background-color: black;
- 
- 
 }
 /* 
 s Hover */
@@ -243,12 +241,7 @@ padding: 1px;
 }
 
 
-  .course-container{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-7%);
-  }
+  
   .about-column {
     float: left;
     width: 33.3%;
@@ -309,9 +302,6 @@ padding: 1px;
     
   }
 
- 
-
-
 
   /* Centered text */
 .centered {
@@ -321,14 +311,14 @@ padding: 1px;
   left: 50%;
   transform: translate(-50%, -250%);
   color: white;
-  
- 
 }
 .linearBg{
   background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
   opacity: 0.9;
   height:81.5%;
-  
+}
+.backgroundHeight{
+  height: 700px;
 }
 .linearBgCopy{
   background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
@@ -368,11 +358,18 @@ padding: 1px;
 }
 /*Medium Screens*/
 @media  screen and (max-width: 1024px) {
+  .parent-container {
+      
+    display: block;
+}
   .linearBg{
   background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
   opacity: 0.9;
   height:75%;
   
+}
+.backgroundHeight{
+  height: 500px;
 }
 .contact-overlay{
   background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
@@ -393,12 +390,12 @@ padding: 1px;
   width: 100%;
   
 }
-  .course-container{
+  /* .course-container{
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-7%);
-  }
+  } */
   /* background-video for contact layout */
 .backgroundVideo{
   width: 100%;
@@ -459,6 +456,10 @@ padding: 1px;
 }
 
 @media  screen and (max-width: 768px) {
+  .parent-container {
+      
+    display: block;
+}
   .pdf-container{
     background-color: rgb(237, 231, 231);
     width: 100%;
@@ -476,12 +477,12 @@ padding: 1px;
     height:100%;
     
   }
-  .course-container{
+  /* .course-container{
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-7%);
-  }
+  } */
   .about-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
@@ -528,7 +529,9 @@ padding: 1px;
     background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
     opacity: 0.9;
     height:78.1%;
-    
+  }
+  .backgroundHeight{
+    height: 400px;
   }
   .linearBgCopy{
     background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
@@ -637,7 +640,9 @@ padding: 1px;
   background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
   opacity: 0.9;
   height:71.5%;
-  
+}
+.backgroundHeight{
+  height: 400px;
 }
 .mainText{
         font-size: 40px;
@@ -687,12 +692,12 @@ padding: 1px;
     
   }
 
-  .course-container{
+  /* .course-container{
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-3%);
-  }
+  } */
  /* team cards */
  .background-video{
   width: 100%;
@@ -785,8 +790,10 @@ padding: 1px;
 .linearBg{
   background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
   opacity: 0.9;
-  height:54%;
-  
+  height:67%;
+}
+.backgroundHeight{
+  height: 330px;
 }
 .linearBgCopy{
   background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
@@ -796,6 +803,20 @@ padding: 1px;
 }
 
 }
+
+@media  screen and (max-width: 420px) {
+  .backgroundHeight{
+    height: 285px;
+  }
+  .linearBg{
+    background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
+    opacity: 0.9;
+    height:63%;
+  }
+
+}
+
+
 @media  screen and (max-width: 390px) {
   .pdf-container{
     background-color: rgb(237, 231, 231);
@@ -814,12 +835,12 @@ padding: 1px;
     height:100%;
     
     }
-  .course-container{
+  /* .course-container{
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-3%);
-  }
+  } */
   /* team cards */
   .about-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -883,8 +904,10 @@ padding: 1px;
 .linearBg{
   background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));
   opacity: 0.9;
-  height:48.5%;
-  
+  height:60%;
+}
+.backgroundHeight{
+  height: 250px;
 }
 .linearBgCopy{
   background-image: linear-gradient(to right, rgb(2, 2, 105), rgba(255, 255, 0, 0.452));

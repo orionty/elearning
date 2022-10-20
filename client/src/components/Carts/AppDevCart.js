@@ -1,36 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { Button, Modal } from "react-bootstrap";
+import React, { useState } from "react";
+
+import { Button } from "react-bootstrap";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
-import CheckoutForm from "../stripe/CheckoutForm";
-const stripePromise = loadStripe("pk_test_51LoFDZEfLeh0BZ6edBz9cndsEeCX2jgJoxCtcACXPynH2k5Zhegvb1ejLyaqRcGhCPOVcREgZ8YXMg8PlzoK0J5G00mYMlsWo6");
-
 
 function AppDevCart() {
-  const [lgShow, setLgShow] = useState(false);
-  const [clientSecret, setClientSecret] = useState("");
-
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:3001/app-development-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "App Development" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
-
-  const appearance = {
-    theme: 'stripe',
-  };
-  const options = {
-    clientSecret,
-    appearance,
-  };
-
   const [AppFirstname, setAppFirstname] = useState("");
   const [AppLastname, setAppLastname] = useState("");
   const [app_email, setAppEmail] = useState("");
@@ -38,18 +12,23 @@ function AppDevCart() {
   const [app_country, setAppCountry] = useState("");
   const [app_course, setAppCourse] = useState("");
 
-
-
   const submitRequest = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:3001/register/app/development",
+      "https://elearning-server-app.herokuapp.com/register/app/development",
       {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ app_email, AppFirstname, AppLastname, AppPhonenumber,app_country,app_course }),
+        body: JSON.stringify({
+          app_email,
+          AppFirstname,
+          AppLastname,
+          AppPhonenumber,
+          app_country,
+          app_course,
+        }),
       }
     );
     const resData = await response.json();
@@ -63,28 +42,6 @@ function AppDevCart() {
 
   return (
     <div>
-      <>
-      <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg" >
-           Payment Details/App Development
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-         <CheckoutForm />
-        </Elements>
-      )}
-        </Modal.Body>
-      </Modal>
-      </>
-
       <section>
         <NavBar />
         <br />
@@ -97,7 +54,11 @@ function AppDevCart() {
               Please fill all the fields below.
             </p>
 
-            <form  onSubmit={submitRequest} class="row g-3 needs-validation" novalidate>
+            <form
+              onSubmit={submitRequest}
+              class="row g-3 needs-validation"
+              novalidate
+            >
               <div class="col-md-4 position-relative">
                 <label
                   for="validationTooltip01"
@@ -234,7 +195,9 @@ function AppDevCart() {
                 >
                   Submit form
                 </button>
-                <Button  onClick={() => setLgShow(true)}>Pay Now</Button>
+                <a href="https://buy.stripe.com/4gw8zRf1R45q2Iw3ce">
+                  <Button>Pay Now</Button>
+                </a>
               </div>
             </form>
           </section>

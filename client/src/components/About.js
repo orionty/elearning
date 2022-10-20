@@ -7,13 +7,14 @@ import {
   FaFacebookSquare,
   FaTwitter,
   FaInstagram,
+  FaLinkedinIn,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import {useScrollToTop} from '../components/ScrollToTop'
+import { useScrollToTop } from "../components/ScrollToTop";
 
 function About() {
   const setScrollToTop = useScrollToTop(true);
-  
+
   return (
     <div onClick={() => setScrollToTop(true)}>
       <NavBar />
@@ -34,21 +35,25 @@ function About() {
             <p className="fw-bold">A Better Approach to Learning</p>
             <p>
               Our goal is to support every student in doing their best in school
-              and beyond. We are the leading student-first connected learning
-              platform.
+              and beyond.
             </p>
             <p className="fw-bold">Our Goal</p>
             <p>
-              By facilitating students to learn more in a shorter amount of time
-              and at a lower cost, we work to increase the overall return on
-              investment in education.
+              The goal of esurde is to increase the overall return on
+              capital in education by providing students with a platform for
+              online learning that allows them to learn more in less time and at
+              a lower cost. Among other advantages, online learning offers
+              excellent flexibility, which makes it much simpler to organize
+              development opportunities.
             </p>
           </div>
 
-          <Card className="child-container3 mt-5 shadow-lg p-0 mb-5 bg-body rounded ">
-            <Card.Img src="img/group-learning.jpg" alt="Group learning" />
-            
-          </Card>
+            <Card.Img
+              src="img/group-learning.jpg"
+              alt="Group learning"
+              className="child-container3 mt-5 shadow-lg p-0 mb-5 bg-body rounded "
+            />
+          
           <p className="fw-bold text-center mb-4 fs-2 instructor-visibility">
             Instructors
           </p>
@@ -70,31 +75,23 @@ function About() {
               Instructors
             </p>
             <p>
-              The growing e-learning community of higher education faculty
+              The growing esurde community of higher education faculty
               members shares the objectives of assisting other educators in
               improving their teaching abilities and assisting students in
               learning and succeeding in their studies. Teachers collaborate
               with other faculty members, share resources, and develop new
-              teaching techniques through online learning. On the platform are
-              over 65,000 educators. Assignments, tests, case studies, lecture
-              notes, and other materials are contributed by the faculty. By
-              participating in a variety of event formats, such as workshops,
-              discussions, and community gatherings, faculty can also learn new
-              skills and teaching techniques from professors and subject matter
-              experts.
+              teaching techniques through online learning.
             </p>
             <p className="fw-bold">Resources</p>
             <p>
-              On this website or platform, the majority of the content is
-              created by outside parties. On this website or platform, the
-              majority of the images were downloaded from unsplash.com,
-              google.com , and pexels.com.
+              The majority of the images on this website or platform were
+              downloaded from unsplash.com, google.com, and pexels.com.
             </p>
             <p style={{ fontStyle: "italic", fontSize: 12 }}>
-              None of the content on this website is subject to any rights that
-              we may have. Please get in touch with us or write a report to us
-              if you believe your content has been posted on this website and
-              would like us to remove it.
+              No PDF on this website is covered by any rights we might have.
+              Check out our references and resources. If you think your content
+              has been posted on this website and would like us to remove it,
+              please contact us or send a report to us.
             </p>
           </div>
         </div>
@@ -103,28 +100,31 @@ function About() {
       <br />
       <br />
       <section class="container team-container">
-        <h2 style={{ textAlign: "center", color: "navy" }}>
-         Online Tutors
-        </h2>
+        <h2 style={{ textAlign: "center", color: "navy" }}>Online Tutors</h2>
         <hr />
         <div class="row about-row">
           <div class="column about-column">
             <div class="card about-card">
               <img
                 src="img/men-avatar.png"
-                alt="James Brown"
+                alt="Okyere Emmanuel Jnr."
                 className="rounded"
-                style={{ width: "100%",height:350,objectFit:"cover" }}
+                style={{ width: "100%", height: 350, objectFit: "cover" }}
               />
               <div class="container about-container">
-                <h2>James Brown</h2>
-                <p class="title-container">Software Developer</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>james98@example.com</p>
+                <h2>Okyere Emmanuel</h2>
+                <p class="title-container">Physicist</p>
+
+                <p>okyereemmanuel192@gmail.com</p>
                 <div className="mb-2 d-flex justify-content-center align-items">
-                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
+                  <a
+                    href="https://wa.me/16038669439"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="fs-3 mx-2"
+                  >
                     <FaWhatsapp />
-                  </Link>
+                  </a>
                   <Link to="www.facebook.com" className="fs-3 mx-2">
                     <FaFacebookSquare />
                   </Link>
@@ -134,9 +134,18 @@ function About() {
                   <Link to="www.twitter.com" className="fs-3 mx-2">
                     <FaTwitter />
                   </Link>
+                  <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    cla
+                    className="fs-3 mx-2"
+                  >
+                    <FaLinkedinIn />
+                  </a>
                 </div>
                 <p>
-                  <Link to="tel:+233553311567">
+                  <Link to="tel:+160386694397">
                     <button class="button-container">Contact</button>
                   </Link>
                 </p>
@@ -148,55 +157,24 @@ function About() {
             <div class="card about-card">
               <img
                 src="img/men-avatar.png"
-                alt="Mike"
+                alt="Asamoah Isaac"
                 className="rounded"
-                style={{ width: "100%",height:350,objectFit:"cover" }}
+                style={{ width: "100%", height: 350, objectFit: "cover" }}
               />
               <div class="container">
-                <h2>Mike Ross</h2>
-                <p class="title-container">Data Scientist</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>mike@example.com</p>
-                <div className="mb-2 d-flex justify-content-center align-items">
-                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
-                    <FaWhatsapp />
-                  </Link>
-                  <Link to="www.facebook.com" className="fs-3 mx-2">
-                    <FaFacebookSquare />
-                  </Link>
-                  <Link to="www.instagram.com" className="fs-3 mx-2">
-                    <FaInstagram />
-                  </Link>
-                  <Link to="www.twitter.com" className="fs-3 mx-2">
-                    <FaTwitter />
-                  </Link>
-                </div>
-                <p>
-                  <Link to="tel:+233553311567">
-                    <button class="button-container">Contact</button>
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
+                <h2>Asamoah Isaac</h2>
+                <p class="title-container">Data Analyst</p>
 
-          <div class="column about-column">
-            <div class="card about-card">
-              <img
-                src="img/men-avatar.png"
-                alt="Peter Walker"
-                className="rounded"
-                style={{ width: "100%",height:350,objectFit:"cover" }}
-              />
-              <div class="container">
-                <h2>Peter Walker</h2>
-                <p class="title-container">Art Director</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>peterwalker782@example.com</p>
+                <p>Asamoahisaac6@gmail.com</p>
                 <div className="mb-2 d-flex justify-content-center align-items">
-                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
+                  <a
+                    href="https://wa.me/16038669439"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="fs-3 mx-2"
+                  >
                     <FaWhatsapp />
-                  </Link>
+                  </a>
                   <Link to="www.facebook.com" className="fs-3 mx-2">
                     <FaFacebookSquare />
                   </Link>
@@ -206,11 +184,24 @@ function About() {
                   <Link to="www.twitter.com" className="fs-3 mx-2">
                     <FaTwitter />
                   </Link>
+                  <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    cla
+                    className="fs-3 mx-2"
+                  >
+                    <FaLinkedinIn />
+                  </a>
                 </div>
                 <p>
-                  <Link to="tel:+233553311567">
+                  <a
+                    href="tel:+13063716578"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <button class="button-container">Contact</button>
-                  </Link>
+                  </a>
                 </p>
               </div>
             </div>
@@ -229,106 +220,69 @@ function About() {
           <div class="column about-column">
             <div class="card about-card">
               <img
-                src="img/orionty.jpg"
+                src="img/men-avatar.png"
                 alt="Orionty"
                 className="rounded"
-                style={{ width: "100%",height:350,objectFit:"cover" }}
+                style={{ width: "100%", height: 350, objectFit: "cover" }}
               />
               <div class="container about-container">
                 <h2>Orionty</h2>
                 <p class="title-container">CEO & Founder</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>oriontyweb@example.com</p>
+                <p>orionty@esurde.com</p>
                 <div className="mb-2 d-flex justify-content-center align-items">
-                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
+                  <a
+                    href="https://wa.me/233553311567"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="fs-3 mx-2"
+                  >
                     <FaWhatsapp />
-                  </Link>
-                  <Link to="www.facebook.com" className="fs-3 mx-2">
+                  </a>
+                  <a
+                    href="https://web.facebook.com/okyere.amponsah.9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    cla
+                    className="fs-3 mx-2"
+                  >
                     <FaFacebookSquare />
-                  </Link>
-                  <Link to="www.instagram.com" className="fs-3 mx-2">
+                  </a>
+                  <a
+                    href="https://www.instagram.com/oriontyprinciples/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    cla
+                    className="fs-3 mx-2"
+                  >
                     <FaInstagram />
-                  </Link>
-                  <Link to="www.twitter.com" className="fs-3 mx-2">
+                  </a>
+                  <a
+                    href="https://twitter.com/OriontyPrincip2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    cla
+                    className="fs-3 mx-2"
+                  >
                     <FaTwitter />
-                  </Link>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/okyere-amponsah-kwatia-141b761a4/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    cla
+                    className="fs-3 mx-2"
+                  >
+                    <FaLinkedinIn />
+                  </a>
                 </div>
                 <p>
-                  <Link to="tel:+233553311567">
+                  <a
+                    href="tel:+233501336536"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <button class="button-container">Contact</button>
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="column about-column">
-            <div class="card about-card">
-              <img
-                src="img/men-avatar.png"
-                alt="Mike"
-                className="rounded"
-                style={{ width: "100%",height:350,objectFit:"cover" }}
-              />
-              <div class="container">
-                <h2>Mike Ross</h2>
-                <p class="title-container">Art Director</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>mike@example.com</p>
-                <div className="mb-2 d-flex justify-content-center align-items">
-                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
-                    <FaWhatsapp />
-                  </Link>
-                  <Link to="www.facebook.com" className="fs-3 mx-2">
-                    <FaFacebookSquare />
-                  </Link>
-                  <Link to="www.instagram.com" className="fs-3 mx-2">
-                    <FaInstagram />
-                  </Link>
-                  <Link to="www.twitter.com" className="fs-3 mx-2">
-                    <FaTwitter />
-                  </Link>
-                </div>
-                <p>
-                  <Link to="tel:+233553311567">
-                    <button class="button-container">Contact</button>
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="column about-column">
-            <div class="card about-card">
-              <img
-                src="img/men-avatar.png"
-                alt="Peter Walker"
-                className="rounded"
-                style={{ width: "100%",height:350,objectFit:"cover" }}
-              />
-              <div class="container">
-                <h2>Peter Walker</h2>
-                <p class="title-container">Art Director</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>peterwalker782@example.com</p>
-                <div className="mb-2 d-flex justify-content-center align-items">
-                  <Link to="www.whatsapp.com" className="fs-3 mx-2">
-                    <FaWhatsapp />
-                  </Link>
-                  <Link to="www.facebook.com" className="fs-3 mx-2">
-                    <FaFacebookSquare />
-                  </Link>
-                  <Link to="www.instagram.com" className="fs-3 mx-2">
-                    <FaInstagram />
-                  </Link>
-                  <Link to="www.twitter.com" className="fs-3 mx-2">
-                    <FaTwitter />
-                  </Link>
-                </div>
-                <p>
-                  <Link to="tel:+233553311567">
-                    <button class="button-container">Contact</button>
-                  </Link>
+                  </a>
                 </p>
               </div>
             </div>

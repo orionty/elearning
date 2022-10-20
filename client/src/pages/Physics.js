@@ -31,13 +31,15 @@ import ElectricPotential from "../pdf/ElectricPotential.pdf";
 import CapacitanceAndDielectrics from "../pdf/CapacitanceAndDielectrics.pdf";
 import CurrentAndResistance from "../pdf/CurrentAndResistance.pdf";
 import DirectCurrentCircuits from "../pdf/DirectCurrentCircuits.pdf";
-import MagneticFields from '../pdf/MagneticFields.pdf'
-import SourcesOfTheMagneticField from '../pdf/SourcesOfTheMagneticField.pdf'
-import FaradaysLaw from '../pdf/FaradaysLaw.pdf'
-import Inductance from '../pdf/Inductance.pdf'
-import AlternatingCurrentCircuits from '../pdf/AlternatingCurrentCircuits.pdf'
-import ElectromagneticWaves from '../pdf/ElectromagneticWaves.pdf'
-import GeometricOptics from '../pdf/GeometricOptics.pdf'
+import MagneticFields from "../pdf/MagneticFields.pdf";
+import SourcesOfTheMagneticField from "../pdf/SourcesOfTheMagneticField.pdf";
+import FaradaysLaw from "../pdf/FaradaysLaw.pdf";
+import Inductance from "../pdf/Inductance.pdf";
+import AlternatingCurrentCircuits from "../pdf/AlternatingCurrentCircuits.pdf";
+import ElectromagneticWaves from "../pdf/ElectromagneticWaves.pdf";
+import GeometricOptics from "../pdf/GeometricOptics.pdf";
+import InterferenceOfLightWaves from "../pdf/InterferenceOfLightWaves.pdf";
+import DiffractionAndPolarization from "../pdf/DiffractionAndPolarization.pdf";
 
 class Physics extends React.Component {
   openNav = () => {
@@ -285,12 +287,21 @@ class Physics extends React.Component {
               >
                 Geometric Optics
               </a>
-              
-                 
-              
-              <Link to="/">Image Formation</Link>
-              <Link to="/">Interference of Light Waves</Link>
-              <Link to="/">Diffraction Patterns and Polarization</Link>
+              <a
+                href={InterferenceOfLightWaves}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Interference of Light Waves
+              </a>
+              <a
+                href={DiffractionAndPolarization}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Diffraction and Polarization
+              </a>
+
               <Link to="/physics" style={{ fontWweight: "bold" }}>
                 PART 6 MODERN PHYSICS
               </Link>
@@ -320,13 +331,13 @@ class Physics extends React.Component {
                   What is physics
                 </h5>
                 <p>
-                  Physics, the most fundamental physical science is concerned
-                  with the fundamental principles of the universe. It is the
-                  foundation upon which the other sciences-astronomy, biology,
-                  chemistry and geology are based. The beauty of physics lies in
-                  the simplicity of its fundamental principles and in the manner
-                  in which just a small number of concepts and models can alter
-                  and expand our view of the world around us.
+                  The most fundamental branch of physical science, physics, is
+                  concerned with the underlying laws of nature. It serves as the
+                  foundation for all other sciences, including astronomy,
+                  biology, chemistry, and geology. The simplicity of physics'
+                  core ideas and the way that a relatively small number of
+                  concepts and models can transform and broaden our
+                  understanding of the world are what make it so beautiful.
                 </p>
               </div>
             </section>
@@ -338,16 +349,17 @@ class Physics extends React.Component {
                   How to study
                 </h5>
                 <p>
-                  Instructors are often asked, "How should I study physics and
-                  prepare for examinations?" There is no simple answer to this
-                  question, but we can offer some suggestions based on our own
-                  experiences in learning and teaching over the years.First and
-                  foremost, maintain a positive attitude toward the subject
-                  matter, keeping in mind that physics is the most fundamental
-                  of all natural sciences. Other science courses that follow
-                  will use the same physical principles, so it important that
-                  you understand and a ble to apply the various concepts and
-                  theories discussed in the text.
+                  Many students ask their instructors, "How should I study
+                  physics and get ready for exams?" Although there isn't a
+                  straightforward answer to this, we can make some
+                  recommendations based on our own long-term learning and
+                  teaching experiences. First and foremost, keep a positive
+                  frame of mind while studying the material. Remember that
+                  physics is the most fundamental of all the natural sciences.
+                  It is crucial that you comprehend and have the ability to
+                  apply the various concepts and theories covered in the text
+                  because subsequent science courses will use the same physical
+                  principles.
                 </p>
               </div>
             </section>
@@ -358,26 +370,27 @@ class Physics extends React.Component {
                   Concepts and principles
                 </h5>
                 <p>
-                  It is essential that you understand the basic concepts and
-                  principles before attempting to solve assigned problems. You
-                  can best accomplish this goal by carefully reading our notes
-                  before you attend your lecture on the covered material. We
-                  have worked hard to prepare questions that help you judge for
-                  yourself how well you understand the material. The pitfall
-                  preventions will also help guide you away from common
-                  misunderstandings about physics. During class, take careful
-                  notes and ask questions about those ideas that are unclear to
-                  you. Keep in mind that few people are able to to absorb the
-                  full meaning of scientific material after only one reading;
-                  several readings of the text and your notes may be necessary.
-                  You should minimize your memorization of the material.
-                  Successful memorization of the passages of the text, equations
-                  and derivations does not necessarily indicate that you
-                  understand the material. Your understanding of the material
-                  will be enhanced through a combination of efficient study
-                  habits, discussions with other students and with instructors,
-                  and ask questions whenever you believe that clarification of a
-                  concept is necessary.{" "}
+                  Before attempting to solve any problems that have been
+                  assigned, it is imperative that you comprehend the fundamental
+                  ideas and concepts. You can most effectively achieve this by
+                  carefully reading our notes before you go to your lecture on
+                  the subject matter covered. We have put a lot of effort into
+                  developing tests that allow you to assess How well you
+                  comprehend the subject is up to you. The danger Preventative
+                  measures will also direct you away from typical misconceptions
+                  pertaining to physics. When in class, be cautious. make notes
+                  and inquire about concepts that are unclear to you.
+                  <br />
+                  Keep in mind that not everyone can comprehend the a scientific
+                  article's full meaning after just one reading; It might be
+                  necessary to read the text and your notes several times.
+                  Reduce the amount of information you memorize. Effective
+                  memorization of text passages and equations the fact that you
+                  use derivations does not necessarily mean you comprehend the
+                  subject. Your comprehension of the subject will be improved by
+                  combining effective study methods habits, conversations with
+                  teachers and fellow students, and whenever you think that a
+                  question needs to be clarified, ask concept is required.
                 </p>
               </div>
             </section>
@@ -389,14 +402,14 @@ class Physics extends React.Component {
                   Preparation for this course
                 </h5>
                 <p>
-                  If you had high school physics, you will probably learn
-                  concepts faster than those who have not because you will be
-                  familiar with the language of physics. If English is a second
-                  language for you, keep a glossary of new terms that you
-                  encounter and make sure you understand how they are used in
-                  physics. Likewise, if you are farther along in your
-                  mathematics courses, you will pick up the mathematical aspects
-                  of physics faster.
+                  If you took high school physics, you will likely pick up
+                  concepts more quickly than those who did not because you are
+                  already familiar with the physics lingo. If you speak English
+                  as a second language, keep a glossary of new words you come
+                  across and make sure you know their definitions and physics
+                  applications. Similarly, you will learn the mathematical
+                  aspects of physics more quickly if you have completed more
+                  mathematics courses.
                 </p>
               </div>
             </section>

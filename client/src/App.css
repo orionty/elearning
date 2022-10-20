@@ -66,7 +66,6 @@
     margin-top: 5px;
     margin-bottom: 5px;
     width: 500px;
-
     align-items: center;
     justify-content: center;
     color: white;
@@ -95,8 +94,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    overflow: hidden;
-    overflow-y: auto;
+   overflow: scroll;
     text-align: center;
   }
 
@@ -433,5 +431,39 @@
   }
 }
 
+.protect-image{
+  pointer-events: none;
+}
+.topics-border-btn{
+  border-bottom-style: ridge;
+  border-bottom-color: navy;
+  border-bottom-width: 8px;
+}
 
+.topic-hover 
+{
+  border-bottom-style: ridge;
+  border-bottom-color: white;
+  border-bottom-width: 5px;
+color: black;
+
+}
+.topic-hover:hover 
+{
+color: white;
+background-color: navy;
+cursor: pointer;
+}
+.topic-hover:active 
+{
+color: white;
+background-color: green;
+cursor: pointer;
+}
+.topic-hover:visited 
+{
+color: white;
+background-color: orange;
+cursor: pointer;
+}
 

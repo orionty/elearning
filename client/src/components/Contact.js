@@ -37,7 +37,7 @@ class Contact extends React.Component {
     e.preventDefault();
     axios({
       method: "POST",
-      url: "http://localhost:3001/send/mail",
+      url: "https://elearning-server-app.herokuapp.com/send/mail",
       data: this.state,
     }).then((response) => {
       if (response.data.status === "success") {
@@ -83,7 +83,7 @@ class Contact extends React.Component {
               >
                 We appreciate you visiting our website. Please use the feedback
                 form below if you have any comments about any page on
-                www.elearning.com.
+                www.esurde.com.
               </p>
             </div>
 
@@ -214,7 +214,7 @@ class Contact extends React.Component {
                   <a
                     href="https://wa.me/233553311567"
                     className="text-decoration-none text-light"
-                    target={"_blank"}
+                    target="_blank" rel="noopener noreferrer"
                   >
                     <p
                       className="p-3 rounded-pill fw-bold shadow-lg  mb-5 "

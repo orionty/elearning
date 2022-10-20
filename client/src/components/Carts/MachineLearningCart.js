@@ -1,36 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { Button, Modal } from "react-bootstrap";
+import React, { useState } from "react";
+
+import { Button } from "react-bootstrap";
 import Footer from "../Footer";
 import NavBar from "../Navbar";
-import CheckoutForm from "../stripe/CheckoutForm";
-const stripePromise = loadStripe("pk_test_51LoFDZEfLeh0BZ6edBz9cndsEeCX2jgJoxCtcACXPynH2k5Zhegvb1ejLyaqRcGhCPOVcREgZ8YXMg8PlzoK0J5G00mYMlsWo6");
-
 
 function MachineLearningCart() {
-  const [lgShow, setLgShow] = useState(false);
-  const [clientSecret, setClientSecret] = useState("");
- 
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:3001/machine-learning-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "Machine Learning" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
-
-  const appearance = {
-    theme: 'stripe',
-  };
-  const options = {
-    clientSecret,
-    appearance,
-  };
-
   const [MLFirstName, setMLFirstName] = useState("");
   const [MLLastName, setMLLastName] = useState("");
   const [ML_email, setMLEmail] = useState("");
@@ -41,13 +15,20 @@ function MachineLearningCart() {
   const submitRequest = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:3001/register/machine/learning",
+      "https://elearning-server-app.herokuapp.com/register/machine/learning",
       {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ ML_email, MLFirstName, MLLastName, MLPhoneNumber,ML_country,ML_course }),
+        body: JSON.stringify({
+          ML_email,
+          MLFirstName,
+          MLLastName,
+          MLPhoneNumber,
+          ML_country,
+          ML_course,
+        }),
       }
     );
     const resData = await response.json();
@@ -60,29 +41,7 @@ function MachineLearningCart() {
   };
 
   return (
-    <div >
-      <>
-      <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg" >
-           Payment Details/Machine Learning
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-         <CheckoutForm />
-        </Elements>
-      )}
-        </Modal.Body>
-      </Modal>
-      </>
-
+    <div>
       <section>
         <NavBar />
         <br />
@@ -180,7 +139,7 @@ function MachineLearningCart() {
                   onChange={(e) => setMLPhoneNumber(e.target.value)}
                   value={MLPhoneNumber}
                 />
-               
+
                 <div class="invalid-tooltip">
                   please provide correct phone number
                 </div>
@@ -236,7 +195,9 @@ function MachineLearningCart() {
                 >
                   Submit form
                 </button>
-                <Button onClick={() => setLgShow(true)}>Pay Now</Button>
+                <a href="https://buy.stripe.com/cN2g2jbPF0Tebf228d">
+                  <Button>Pay Now</Button>
+                </a>
               </div>
             </form>
           </section>

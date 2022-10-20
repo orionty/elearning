@@ -9,7 +9,7 @@
     "id":2,
     "mainContent":"Computer Science",
     "link": "/computer_science"
-  
+    
 },
 {
     "id":3,
@@ -26,19 +26,19 @@
 {
     "id":5,
     "mainContent":"Biochemistry",
-    "link": "/biochemistry"
+    "link": "/#biochemistry"
   
 },
 {
     "id":6,
     "mainContent":"Electrical Engineering",
-    "link": "/electrical_engineering"
+    "link": "/#electrical_engineering"
   
 },
 {
     "id":7,
     "mainContent":"Computer Engineering",
-    "link": "/computer_engineering"
+    "link": "/#computer_engineering"
   
 },
 {
@@ -56,7 +56,7 @@
 {
     "id":10,
     "mainContent":"Economics",
-    "link": "/economics"
+    "link": "/#economics"
   
 },
 {
@@ -121,14 +121,8 @@
 },
 {
     "id":21,
-    "mainContent":"Show that the expression v = at, where v represents speed, acceleration, and t an instant of time, is dimensionally correct.",
-    "link": "/physics/measurement"
-  
-},
-{
-    "id":22,
-    "mainContent":"The mass of a solid cube is 856 g, and each edge has a length of 5.35 cm. Determine the density ρ of the cube in basic SI units.",
-    "link": "/physics/measurement"
+    "mainContent":"Actuarial Science",
+    "link": "/actuarial_science"
   
 }
 

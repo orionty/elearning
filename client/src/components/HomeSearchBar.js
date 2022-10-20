@@ -6,7 +6,7 @@ import { RiCloseFill } from "react-icons/ri";
 import { MdDateRange } from "react-icons/md";
 import { BiTime } from "react-icons/bi";
 import BookData from "../Data";
-import {useScrollToTop} from '../components/ScrollToTop'
+import { useScrollToTop } from "../components/ScrollToTop";
 import { Container, Navbar, Nav } from "react-bootstrap";
 
 function HomeSearchBar() {
@@ -69,10 +69,12 @@ function HomeSearchBar() {
         className="navBar p-3 d-flex justify-content-between align-items-center"
       >
         <Container fluid>
-          <Navbar.Brand className="navBrand ">
-            <FaGraduationCap className="fs-1 p-1 mb-2" />
-            E-LEARNING
-          </Navbar.Brand>
+          <Link to="/" className="text-decoration-none navitem">
+            <Navbar.Brand className="navBrand ">
+              <FaGraduationCap className="fs-1 p-1 mb-2" />
+              ESURDE
+            </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse
             id="responsive-navbar-nav"
@@ -89,8 +91,8 @@ function HomeSearchBar() {
                 </Link>
               </Nav.Link>
               <Nav.Link className="navLinkHover">
-                <Link to="/programs" className="text-decoration-none navitem">
-                  Programs
+                <Link to="/courses" className="text-decoration-none navitem">
+                  Courses
                 </Link>
               </Nav.Link>
               <Nav.Link className="navLinkHover">
@@ -98,11 +100,7 @@ function HomeSearchBar() {
                   Questions
                 </Link>
               </Nav.Link>
-              <Nav.Link className="navLinkHover">
-                <Link to="/discussion" className="text-decoration-none navitem">
-                  Discussion
-                </Link>
-              </Nav.Link>
+
               <Nav.Link className="navLinkHover">
                 <Link to="/contact-us" className="text-decoration-none navitem">
                   Contact
